@@ -21,6 +21,8 @@
 		BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */; };
 		BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF821DDECB200E5B604 /* ViewController.swift */; };
 		BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DFA21DDF37900E5B604 /* Stock.swift */; };
+		BFD886C921E6106D00ADC441 /* addNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD886C821E6106D00ADC441 /* addNumber.swift */; };
+		BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD886CA21E6107700ADC441 /* addNumber.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF109DF821DDECB200E5B604 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF109DFA21DDF37900E5B604 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		BFD886C821E6106D00ADC441 /* addNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNumber.swift; sourceTree = "<group>"; };
+		BFD886CA21E6107700ADC441 /* addNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addNumber.xib; sourceTree = "<group>"; };
 		CF64E39629E9FF6D5D8FF8DB /* Pods-reamlRememberTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reamlRememberTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools.release.xcconfig"; sourceTree = "<group>"; };
 		DBB000EF5D0400BF99AB7A8A /* Pods-reamlRememberTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reamlRememberTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,8 @@
 			children = (
 				BF109DF221DDEC8900E5B604 /* addData.swift */,
 				BF109DF321DDEC8900E5B604 /* addData.xib */,
+				BFD886C821E6106D00ADC441 /* addNumber.swift */,
+				BFD886CA21E6107700ADC441 /* addNumber.xib */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				BF109DDE21DDEC1100E5B604 /* LaunchScreen.storyboard in Resources */,
 				BF109DDB21DDEC1100E5B604 /* Assets.xcassets in Resources */,
 				BF109DF521DDEC8900E5B604 /* addData.xib in Resources */,
+				BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFD886C921E6106D00ADC441 /* addNumber.swift in Sources */,
 				BF109DE821DDEC6A00E5B604 /* myTools.swift in Sources */,
 				BF109DF421DDEC8900E5B604 /* addData.swift in Sources */,
 				BF109DEE21DDEC7200E5B604 /* TableViewCellViewController.swift in Sources */,

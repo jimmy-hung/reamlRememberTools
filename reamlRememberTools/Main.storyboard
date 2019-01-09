@@ -81,7 +81,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="end_price" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8W-S4-ETG">
-                                                    <rect key="frame" x="221" y="-0.5" width="107" height="44.5"/>
+                                                    <rect key="frame" x="230" y="-0.5" width="89" height="44.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -108,7 +108,7 @@
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="1kp-dc-3eR" firstAttribute="height" secondItem="FYf-Vj-VYY" secondAttribute="height" id="1Uo-1m-iL8"/>
-                                            <constraint firstItem="C8W-S4-ETG" firstAttribute="width" secondItem="FYf-Vj-VYY" secondAttribute="width" multiplier="0.3" id="4KX-e6-wwl"/>
+                                            <constraint firstItem="C8W-S4-ETG" firstAttribute="width" secondItem="FYf-Vj-VYY" secondAttribute="width" multiplier="0.25" id="4KX-e6-wwl"/>
                                             <constraint firstItem="1kp-dc-3eR" firstAttribute="width" secondItem="FYf-Vj-VYY" secondAttribute="width" multiplier="0.1" id="7oF-Jr-eZW"/>
                                             <constraint firstItem="C8W-S4-ETG" firstAttribute="height" secondItem="FYf-Vj-VYY" secondAttribute="height" id="g4o-4u-ZMh"/>
                                             <constraint firstItem="xwb-uf-rt4" firstAttribute="height" secondItem="FYf-Vj-VYY" secondAttribute="height" id="gD6-DO-D7E"/>

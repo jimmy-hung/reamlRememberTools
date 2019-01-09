@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-vv-ru3" userLabel="總集合">
-                    <rect key="frame" x="101" y="76" width="304" height="417"/>
+                    <rect key="frame" x="101" y="107.5" width="304" height="417"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NmD-w6-afy" userLabel="股號">
                             <rect key="frame" x="0.0" y="0.0" width="304" height="42.5"/>
@@ -58,16 +58,16 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-ug-ev8" userLabel="股名">
-                            <rect key="frame" x="0.0" y="62.5" width="304" height="42"/>
+                            <rect key="frame" x="0.0" y="62.5" width="304" height="42.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="股名 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fp-B4-JWh">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="42"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="42.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TBc-bA-ym0">
-                                    <rect key="frame" x="152" y="0.0" width="152" height="42"/>
+                                    <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -75,7 +75,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xwu-kd-qHR" userLabel="張數">
-                            <rect key="frame" x="0.0" y="124.5" width="304" height="42.5"/>
+                            <rect key="frame" x="0.0" y="125" width="304" height="42.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="張數 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6S-Ay-Rum">
                                     <rect key="frame" x="0.0" y="0.0" width="152" height="42.5"/>
@@ -92,16 +92,16 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-Et-EuM" userLabel="買進日期">
-                            <rect key="frame" x="0.0" y="187" width="304" height="42.5"/>
+                            <rect key="frame" x="0.0" y="187.5" width="304" height="42"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進日期 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V3-nf-4PM">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="42.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="42"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qDb-0L-ec1">
-                                    <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
+                                    <rect key="frame" x="152" y="0.0" width="152" height="42"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -161,13 +161,43 @@
                         </stackView>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="年份：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-lx-ncL">
+                    <rect key="frame" x="93" y="48" width="52" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="月份：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-kS-lfc">
+                    <rect key="frame" x="287" y="47" width="52" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-5H-etQ">
+                    <rect key="frame" x="347" y="42" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="selectNumber:" destination="-1" eventType="touchUpInside" id="sZf-P3-ybz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-eB-UB0">
+                    <rect key="frame" x="153" y="42" width="46" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="selectNumber:" destination="-1" eventType="touchUpInside" id="12F-vQ-A0B"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
             <constraints>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T5J-MW-WtN"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="Vaz-fU-awp"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="Vd2-6T-xSy"/>
-                <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.9" id="aO6-of-va6"/>
+                <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aO6-of-va6"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="dX7-V2-R8r"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.8" id="jhk-21-aqB"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lpV-Hz-0vf"/>
@@ -175,7 +205,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="32" y="125.93703148425789"/>
+            <point key="canvasLocation" x="-37" y="-22"/>
         </view>
     </objects>
 </document>

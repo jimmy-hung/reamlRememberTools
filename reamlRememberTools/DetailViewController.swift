@@ -29,7 +29,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        showMyData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,9 +45,8 @@ class DetailViewController: UIViewController {
         resultLB.adjustsFontSizeToFitWidth = true
         resultLB.text = "經過 \(String(describing: days)) 天，總共獲取 \((Int(spread() * 1000))) 金額"
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
+    func showMyData(){
         nameLB.text = infoData[0].name
         numberLB.text = infoData[0].number
         countLB.text = infoData[0].count

@@ -21,9 +21,8 @@ class TableViewViewController: UIViewController {
     @IBOutlet weak var sumLB: UILabel!
     
     let vc = ViewController()
+    let monthArray = ["一"," 二","三","四","五","六","七","八","九","十","十一","十二"]
     
-//    let app = UIApplication.shared.delegate as! AppDelegate
-//    var viewCotext: NSManagedObjectContext!
     @IBOutlet weak var addNumText: UITextField!
     @IBOutlet weak var addNameText: UITextField!
     @IBOutlet weak var addCountText: UITextField!
@@ -35,10 +34,11 @@ class TableViewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 顯示 realm dataBase 路徑位置
         print(Realm.Configuration.defaultConfiguration.fileURL)
 
         view.backgroundColor = .lightGray
-        
+
         // 設置委任對象
         myTableView.delegate = self
         myTableView.dataSource = self
@@ -47,6 +47,8 @@ class TableViewViewController: UIViewController {
         myTableView.separatorStyle = .none
         
         myTableView.getCorner(cornerItem: myTableView, myCorner: 20, cornerBG: .lightGray)
+        
+        countSumTrade()
         
     }
     
@@ -95,7 +97,60 @@ class TableViewViewController: UIViewController {
         
         writteInRealm(stock: stock)
         
-        addDataView.removeFromSuperview()
+        myTableView.reloadData()
+        
+        countSumTrade()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            UIView.animate(withDuration: 2, animations: {
+                self.addDataView.removeFromSuperview()
+            })
+        }
+    }
+    
+    @IBAction func selectNumber(_ sender: UIButton) {
+        
+        
+        
+    }
+    
+    func addGradientLayer(view: UIView, aColor: CGColor, bColor: CGColor, cColor: CGColor, dColor: CGColor){
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        
+        let firColor = aColor
+        let secColor = bColor
+        let thirdColor = cColor
+        let fourthColor = dColor
+        
+        gradientLayer.colors = [firColor, secColor, thirdColor, fourthColor]
+        gradientLayer.startPoint = CGPoint(x: 1, y: 1)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.locations = [0.2,0.4,0.6,0.8]
+        view.layer.addSublayer(gradientLayer)
+    }
+    
+    // 計算總交易次數 = 總共幾筆資料
+    func countSumTrade(){
+        let realm = try! Realm()
+        let stock = realm.objects(Stock.self)
+        tradTimesLB.text = String(stock.count)
+        
+        var sum : Double = 0
+        for i in  0 ... (stock.count - 1) {
+            let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
+            sum = sum + endPrice
+        }
+        sum = sum * 1000
+        
+        if sum > 0{
+            sumLB.textColor = .red
+        }else if sum < 0{
+            sumLB.textColor = .green
+        }
+        
+        sumLB.text = String(Int(sum.roundTo(places: 2)))
     }
     
     func writteInRealm(stock: Stock){
@@ -107,6 +162,9 @@ class TableViewViewController: UIViewController {
         }
     }
     
+    func showTheSumTrad(){
+        
+    }
 }
 
 extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
@@ -178,13 +236,13 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     // 有幾組 section
-    func numberOfSections(in tableView: UITableView) -> Int {
-        let realm = try! Realm()
-        
-        let myData = realm.objects(Stock.self)
-        
-        return myData.count
-    }
+//    func numberOfSections(in tableView: UITableView) -> Int {
+//        let realm = try! Realm()
+//
+//        let myData = realm.objects(Stock.self)
+//
+//        return myData.count
+//    }
     
     // 每個 section 的標題
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
