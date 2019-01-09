@@ -7,21 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94F6924196FCD6E243B97375 /* Pods_reamlRememberTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123C9AECAD1B53A4C564404D /* Pods_reamlRememberTools.framework */; };
 		BF109DD421DDEC0F00E5B604 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DD321DDEC0F00E5B604 /* AppDelegate.swift */; };
-		BF109DD621DDEC0F00E5B604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DD521DDEC0F00E5B604 /* ViewController.swift */; };
-		BF109DD921DDEC0F00E5B604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF109DD721DDEC0F00E5B604 /* Main.storyboard */; };
 		BF109DDB21DDEC1100E5B604 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF109DDA21DDEC1100E5B604 /* Assets.xcassets */; };
 		BF109DDE21DDEC1100E5B604 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF109DDC21DDEC1100E5B604 /* LaunchScreen.storyboard */; };
+		BF109DE821DDEC6A00E5B604 /* myTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DE621DDEC6A00E5B604 /* myTools.swift */; };
+		BF109DE921DDEC6A00E5B604 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DE721DDEC6A00E5B604 /* Double.swift */; };
+		BF109DED21DDEC7200E5B604 /* TableViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DEB21DDEC7200E5B604 /* TableViewViewController.swift */; };
+		BF109DEE21DDEC7200E5B604 /* TableViewCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DEC21DDEC7200E5B604 /* TableViewCellViewController.swift */; };
+		BF109DF021DDEC7F00E5B604 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF109DEF21DDEC7F00E5B604 /* Main.storyboard */; };
+		BF109DF421DDEC8900E5B604 /* addData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF221DDEC8900E5B604 /* addData.swift */; };
+		BF109DF521DDEC8900E5B604 /* addData.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF109DF321DDEC8900E5B604 /* addData.xib */; };
+		BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */; };
+		BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF821DDECB200E5B604 /* ViewController.swift */; };
+		BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DFA21DDF37900E5B604 /* Stock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123C9AECAD1B53A4C564404D /* Pods_reamlRememberTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_reamlRememberTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF109DD021DDEC0F00E5B604 /* reamlRememberTools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reamlRememberTools.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF109DD321DDEC0F00E5B604 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BF109DD521DDEC0F00E5B604 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BF109DD821DDEC0F00E5B604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BF109DDA21DDEC1100E5B604 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF109DDD21DDEC1100E5B604 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF109DDF21DDEC1100E5B604 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF109DE621DDEC6A00E5B604 /* myTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTools.swift; sourceTree = "<group>"; };
+		BF109DE721DDEC6A00E5B604 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		BF109DEB21DDEC7200E5B604 /* TableViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewViewController.swift; sourceTree = "<group>"; };
+		BF109DEC21DDEC7200E5B604 /* TableViewCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellViewController.swift; sourceTree = "<group>"; };
+		BF109DEF21DDEC7F00E5B604 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BF109DF221DDEC8900E5B604 /* addData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addData.swift; sourceTree = "<group>"; };
+		BF109DF321DDEC8900E5B604 /* addData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = addData.xib; sourceTree = "<group>"; };
+		BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BF109DF821DDECB200E5B604 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BF109DFA21DDF37900E5B604 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		CF64E39629E9FF6D5D8FF8DB /* Pods-reamlRememberTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reamlRememberTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools.release.xcconfig"; sourceTree = "<group>"; };
+		DBB000EF5D0400BF99AB7A8A /* Pods-reamlRememberTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reamlRememberTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F6924196FCD6E243B97375 /* Pods_reamlRememberTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492243AA44D6BD55591E2202 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DBB000EF5D0400BF99AB7A8A /* Pods-reamlRememberTools.debug.xcconfig */,
+				CF64E39629E9FF6D5D8FF8DB /* Pods-reamlRememberTools.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		893B7ACAE8FAA0A23613F205 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				123C9AECAD1B53A4C564404D /* Pods_reamlRememberTools.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BF109DC721DDEC0F00E5B604 = {
 			isa = PBXGroup;
 			children = (
 				BF109DD221DDEC0F00E5B604 /* reamlRememberTools */,
 				BF109DD121DDEC0F00E5B604 /* Products */,
+				492243AA44D6BD55591E2202 /* Pods */,
+				893B7ACAE8FAA0A23613F205 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +95,45 @@
 			isa = PBXGroup;
 			children = (
 				BF109DD321DDEC0F00E5B604 /* AppDelegate.swift */,
-				BF109DD521DDEC0F00E5B604 /* ViewController.swift */,
-				BF109DD721DDEC0F00E5B604 /* Main.storyboard */,
+				BF109DF821DDECB200E5B604 /* ViewController.swift */,
+				BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */,
+				BF109DEF21DDEC7F00E5B604 /* Main.storyboard */,
 				BF109DDA21DDEC1100E5B604 /* Assets.xcassets */,
+				BF109DFA21DDF37900E5B604 /* Stock.swift */,
+				BF109DE521DDEC6A00E5B604 /* Tools */,
+				BF109DEA21DDEC7200E5B604 /* TableView */,
+				BF109DF121DDEC8900E5B604 /* xib */,
 				BF109DDC21DDEC1100E5B604 /* LaunchScreen.storyboard */,
 				BF109DDF21DDEC1100E5B604 /* Info.plist */,
 			);
 			path = reamlRememberTools;
+			sourceTree = "<group>";
+		};
+		BF109DE521DDEC6A00E5B604 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				BF109DE621DDEC6A00E5B604 /* myTools.swift */,
+				BF109DE721DDEC6A00E5B604 /* Double.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		BF109DEA21DDEC7200E5B604 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BF109DEB21DDEC7200E5B604 /* TableViewViewController.swift */,
+				BF109DEC21DDEC7200E5B604 /* TableViewCellViewController.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		BF109DF121DDEC8900E5B604 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				BF109DF221DDEC8900E5B604 /* addData.swift */,
+				BF109DF321DDEC8900E5B604 /* addData.xib */,
+			);
+			path = xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF109DE221DDEC1100E5B604 /* Build configuration list for PBXNativeTarget "reamlRememberTools" */;
 			buildPhases = (
+				1F64C74D032E533B960C7DF2 /* [CP] Check Pods Manifest.lock */,
 				BF109DCC21DDEC0F00E5B604 /* Sources */,
 				BF109DCD21DDEC0F00E5B604 /* Frameworks */,
 				BF109DCE21DDEC0F00E5B604 /* Resources */,
+				2CA97542630788700A3AB608 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,35 +196,84 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF109DF021DDEC7F00E5B604 /* Main.storyboard in Resources */,
 				BF109DDE21DDEC1100E5B604 /* LaunchScreen.storyboard in Resources */,
 				BF109DDB21DDEC1100E5B604 /* Assets.xcassets in Resources */,
-				BF109DD921DDEC0F00E5B604 /* Main.storyboard in Resources */,
+				BF109DF521DDEC8900E5B604 /* addData.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F64C74D032E533B960C7DF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-reamlRememberTools-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CA97542630788700A3AB608 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF109DCC21DDEC0F00E5B604 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF109DD621DDEC0F00E5B604 /* ViewController.swift in Sources */,
+				BF109DE821DDEC6A00E5B604 /* myTools.swift in Sources */,
+				BF109DF421DDEC8900E5B604 /* addData.swift in Sources */,
+				BF109DEE21DDEC7200E5B604 /* TableViewCellViewController.swift in Sources */,
+				BF109DE921DDEC6A00E5B604 /* Double.swift in Sources */,
 				BF109DD421DDEC0F00E5B604 /* AppDelegate.swift in Sources */,
+				BF109DED21DDEC7200E5B604 /* TableViewViewController.swift in Sources */,
+				BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */,
+				BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */,
+				BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BF109DD721DDEC0F00E5B604 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BF109DD821DDEC0F00E5B604 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BF109DDC21DDEC1100E5B604 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -280,6 +403,7 @@
 		};
 		BF109DE321DDEC1100E5B604 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBB000EF5D0400BF99AB7A8A /* Pods-reamlRememberTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -298,6 +422,7 @@
 		};
 		BF109DE421DDEC1100E5B604 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF64E39629E9FF6D5D8FF8DB /* Pods-reamlRememberTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

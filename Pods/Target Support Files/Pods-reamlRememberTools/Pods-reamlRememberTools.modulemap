@@ -1,0 +1,6 @@
+framework module Pods_reamlRememberTools {
+  umbrella header "Pods-reamlRememberTools-umbrella.h"
+
+  export *
+  module * { export * }
+}
