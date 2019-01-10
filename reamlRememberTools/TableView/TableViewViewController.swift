@@ -16,6 +16,7 @@ import RealmSwift
 class TableViewViewController: UIViewController {
     
     @IBOutlet var addDataView: UIView!
+    @IBOutlet var addNumberView: UIView!
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var tradTimesLB: UILabel!
     @IBOutlet weak var sumLB: UILabel!
@@ -30,6 +31,11 @@ class TableViewViewController: UIViewController {
     @IBOutlet weak var addSDateText: UITextField!
     @IBOutlet weak var addBPriceText: UITextField!
     @IBOutlet weak var addSPricrText: UITextField!
+    
+    @IBOutlet weak var yearLB: UILabel!
+    @IBOutlet weak var monthLB: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +75,6 @@ class TableViewViewController: UIViewController {
     }
     
     @IBAction func addAtn(_ sender: UIBarButtonItem) {
-        print("here is bar button")
         // insert xib
         if (Bundle.main.loadNibNamed("addData", owner: self, options: nil)?.first as? addData) != nil
         {
@@ -82,6 +87,42 @@ class TableViewViewController: UIViewController {
             self.view.addSubview(addDataView)
         }
     }
+    
+    @IBAction func selectMonthAtn(_ sender: UIButton) {
+        
+        // insert xib
+        if (Bundle.main.loadNibNamed("addNumber", owner: self, options: nil)?.first as? addNumber) != nil
+        {
+            addNumberView.frame.size.width = view.frame.size.width * 0.8
+            addNumberView.frame.size.height = view.frame.size.height * 0.6
+            addNumberView.frame.origin.x = self.view.frame.size.width * 0.2 / 2
+            addNumberView.frame.origin.y = self.view.frame.size.height * 0.4 / 2
+            
+            addNumberView.getCorner(cornerItem: addNumberView, myCorner: 60, cornerBG: .yellow)
+            self.view.addSubview(addNumberView)
+
+        }
+        
+    }
+    
+    @IBAction func sureMonthAtn(_ sender: UIButton) {
+        switch sender.tag {
+        default:
+            checkoutBtn(sender: sender)
+        }
+    }
+    
+    func checkoutBtn(sender: UIButton){
+        sender.getCorner(cornerItem: sender, myCorner: 30, cornerBG: .white)
+        sender.backgroundColor = .white
+        
+        monthLB.text = String(sender.tag)  + " 月"
+        UIView.animate(withDuration: 3) {
+            self.addNumberView.alpha = 0
+        }
+    }
+    
+    
     
     @IBAction func sureAtn(){
         

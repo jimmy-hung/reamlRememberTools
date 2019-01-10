@@ -1,22 +1,30 @@
 PODS:
+  - IQKeyboardManager (6.2.0)
   - Realm (3.13.0):
     - Realm/Headers (= 3.13.0)
   - Realm/Headers (3.13.0)
   - RealmSwift (3.13.0):
     - Realm (= 3.13.0)
+  - TextFieldEffects (1.5.1)
 
 DEPENDENCIES:
+  - IQKeyboardManager
   - RealmSwift
+  - TextFieldEffects
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - IQKeyboardManager
     - Realm
     - RealmSwift
+    - TextFieldEffects
 
 SPEC CHECKSUMS:
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
   Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
   RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
+  TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: f15c42c602bfb9c734ae45a99a0b71a309a21fb2
+PODFILE CHECKSUM: a0f7bde8ef1f6e7a85601f5ec51300996779c57b
 
 COCOAPODS: 1.5.3
