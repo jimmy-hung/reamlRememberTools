@@ -21,6 +21,7 @@
                 <outlet property="addSDateText" destination="aCN-a1-7zX" id="IN2-am-y5b"/>
                 <outlet property="addSPricrText" destination="tGA-N8-RUn" id="TZS-OG-o8a"/>
                 <outlet property="monthLB" destination="AGE-pG-TKp" id="1BM-nK-aks"/>
+                <outlet property="yearText" destination="g1y-fu-der" id="JMQ-7c-lbK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -54,7 +55,7 @@
                                     <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -88,7 +89,7 @@
                                     <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -105,7 +106,7 @@
                                     <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -122,7 +123,7 @@
                                     <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -139,7 +140,7 @@
                                     <rect key="frame" x="152" y="0.0" width="152" height="42"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -156,7 +157,7 @@
                                     <rect key="frame" x="152" y="0.0" width="152" height="42.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -179,17 +180,17 @@
                         </label>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-Qq-niR" userLabel="選擇年月">
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-35" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-Qq-niR" userLabel="選擇年月">
                     <rect key="frame" x="12.5" y="85.5" width="481" height="50.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-eL-2Gt">
-                            <rect key="frame" x="0.0" y="0.0" width="143" height="50.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="146.5" height="50.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <color key="textColor" red="0.22231248021125793" green="0.48492830991744995" blue="0.96475106477737427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="年" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1y-fu-der" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="113" y="0.0" width="142.5" height="50.5"/>
+                            <rect key="frame" x="111.5" y="0.0" width="146.5" height="50.5"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -203,28 +204,37 @@
                             </userDefinedRuntimeAttributes>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-5H-etQ">
-                            <rect key="frame" x="225.5" y="0.0" width="142.5" height="50.5"/>
+                            <rect key="frame" x="223" y="0.0" width="146.5" height="50.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                             <state key="normal" title="選"/>
                             <connections>
                                 <action selector="selectMonthAtn:" destination="-1" eventType="touchUpInside" id="LN2-Ap-rcz"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-pG-TKp">
-                            <rect key="frame" x="338" y="0.0" width="143" height="50.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-pG-TKp">
+                            <rect key="frame" x="334.5" y="0.0" width="146.5" height="50.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                 </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXW-l2-3Fv">
+                    <rect key="frame" x="430" y="79" width="50.5" height="63"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
             <constraints>
                 <constraint firstItem="oE9-Qq-niR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.35" id="03C-m9-BcN"/>
+                <constraint firstItem="uXW-l2-3Fv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.8" id="0Kt-0C-yQs"/>
                 <constraint firstItem="yR6-Yv-1mX" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="30S-n5-N6y"/>
                 <constraint firstItem="oE9-Qq-niR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="699-U7-pi0"/>
+                <constraint firstItem="uXW-l2-3Fv" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="BJh-pp-A32"/>
                 <constraint firstItem="oE9-Qq-niR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="LEu-Ti-2g6"/>
+                <constraint firstItem="uXW-l2-3Fv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.35" id="RjT-LG-WY2"/>
                 <constraint firstItem="yR6-Yv-1mX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SFr-Kr-xSW"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T5J-MW-WtN"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="Vaz-fU-awp"/>
@@ -233,6 +243,7 @@
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.1" id="aO6-of-va6"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="dX7-V2-R8r"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.9" id="jhk-21-aqB"/>
+                <constraint firstItem="uXW-l2-3Fv" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="lPw-Y3-Se4"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lpV-Hz-0vf"/>
                 <constraint firstItem="yR6-Yv-1mX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="qN6-wa-mjx"/>
                 <constraint firstItem="yR6-Yv-1mX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.2" id="rbu-72-IAy"/>
@@ -240,7 +251,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-1421" y="3"/>
+            <point key="canvasLocation" x="-1610" y="-9"/>
         </view>
     </objects>
 </document>

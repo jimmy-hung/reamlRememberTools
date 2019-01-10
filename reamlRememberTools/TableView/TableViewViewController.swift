@@ -32,6 +32,7 @@ class TableViewViewController: UIViewController {
     @IBOutlet weak var addBPriceText: UITextField!
     @IBOutlet weak var addSPricrText: UITextField!
     
+    @IBOutlet weak var yearText: UITextField!
     @IBOutlet weak var monthLB: UILabel!
     
     
@@ -115,7 +116,7 @@ class TableViewViewController: UIViewController {
         sender.getCorner(cornerItem: sender, myCorner: 30, cornerBG: .white)
         sender.backgroundColor = .white
         
-        monthLB.text = String(sender.tag)  + "   月"
+        monthLB.text = String(sender.tag)
         UIView.animate(withDuration: 3) {
             self.addNumberView.alpha = 0
         }
@@ -127,6 +128,8 @@ class TableViewViewController: UIViewController {
         
         let stock = Stock()
         
+        stock.year = yearText.text!
+        stock.month = monthLB.text!
         stock.number = addNumText.text!
         stock.name = addNameText.text!
         stock.count = addCountText.text!
@@ -148,23 +151,6 @@ class TableViewViewController: UIViewController {
         }
     }
     
-    func addGradientLayer(view: UIView, aColor: CGColor, bColor: CGColor, cColor: CGColor, dColor: CGColor){
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        
-        let firColor = aColor
-        let secColor = bColor
-        let thirdColor = cColor
-        let fourthColor = dColor
-        
-        gradientLayer.colors = [firColor, secColor, thirdColor, fourthColor]
-        gradientLayer.startPoint = CGPoint(x: 1, y: 1)
-        gradientLayer.endPoint = CGPoint(x: 0, y: 0)
-        gradientLayer.locations = [0.2,0.4,0.6,0.8]
-        view.layer.addSublayer(gradientLayer)
-    }
-    
     // 計算總交易次數 = 總共幾筆資料
     func countSumTrade(){
         let realm = try! Realm()
@@ -172,17 +158,21 @@ class TableViewViewController: UIViewController {
         tradTimesLB.text = String(stock.count)
         
         var sum : Double = 0
-        for i in  0 ... (stock.count - 1) {
-            let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
-            sum = sum + endPrice
-        }
-        sum = sum * 1000
         
-        if sum > 0{
-            sumLB.textColor = .red
-        }else if sum < 0{
-            sumLB.textColor = .green
+        if stock.count != 0 {
+            for i in  0 ... (stock.count - 1) {
+                let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
+                sum = sum + endPrice
+            }
+            sum = sum * 1000
+            
+            if sum > 0{
+                sumLB.textColor = .red
+            }else if sum < 0{
+                sumLB.textColor = .green
+            }
         }
+
         
         sumLB.text = String(Int(sum.roundTo(places: 2)))
     }
@@ -207,9 +197,9 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
         
         let realm = try! Realm()
         
-        let myData = realm.objects(Stock.self)
+        let stock = realm.objects(Stock.self)
         
-        return myData.count
+        return stock.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -220,11 +210,11 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
         cell.accessoryType = .disclosureIndicator
         
         let realm = try! Realm()
-        
-        let result = realm.objects(Stock.self)
+
+        let stock = realm.objects(Stock.self)
 
         // 顯示的內容
-        let index = result[indexPath.row]
+        let index = stock[indexPath.row]
         if cell.textLabel != nil {
 
             let count = Double(index.count)!
@@ -247,40 +237,54 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 取消 cell 的選取狀態
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let realm = try! Realm()
-        
+
         let myData = realm.objects(Stock.self)
-        
+
         let name = myData[indexPath.row].name
 //        let name = info[indexPath.section][indexPath.row]
         print("選擇的是 \(name)")
     }
-    
+
     // 點選 Accessory 按鈕後執行的動作
     // 必須設置 cell 的 accessoryType
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        
+
         let realm = try! Realm()
-        
-        let myData = realm.objects(Stock.self)
-        
-        let name = myData[indexPath.row].name
+
+        let stock = realm.objects(Stock.self)
+
+        let name = stock[indexPath.row].name
         print("按下的是 \(name) 的 detail")
     }
-    
+
     // 有幾組 section
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        let realm = try! Realm()
-//
-//        let myData = realm.objects(Stock.self)
-//
-//        return myData.count
-//    }
-    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        let realm = try! Realm()
+        let stock = realm.objects(Stock.self)
+
+        var yearSum = 1
+        if stock.count != 0 {
+            for i in  0 ... (stock.count - 1) {
+                if stock[0].year != stock[i].year{
+                    yearSum += 1
+                }
+            }
+        }
+        
+        return yearSum
+    }
+
     // 每個 section 的標題
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = section == 0 ? "籃球" : "棒球"
+        let realm = try! Realm()
+        let stock = realm.objects(Stock.self)
+        
+        let title = ""
+        
+        
+        
         return title
     }
     
