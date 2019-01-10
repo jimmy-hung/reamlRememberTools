@@ -32,7 +32,6 @@ class TableViewViewController: UIViewController {
     @IBOutlet weak var addBPriceText: UITextField!
     @IBOutlet weak var addSPricrText: UITextField!
     
-    @IBOutlet weak var yearLB: UILabel!
     @IBOutlet weak var monthLB: UILabel!
     
     
@@ -116,7 +115,7 @@ class TableViewViewController: UIViewController {
         sender.getCorner(cornerItem: sender, myCorner: 30, cornerBG: .white)
         sender.backgroundColor = .white
         
-        monthLB.text = String(sender.tag)  + " 月"
+        monthLB.text = String(sender.tag)  + "   月"
         UIView.animate(withDuration: 3) {
             self.addNumberView.alpha = 0
         }
@@ -147,12 +146,6 @@ class TableViewViewController: UIViewController {
                 self.addDataView.removeFromSuperview()
             })
         }
-    }
-    
-    @IBAction func selectNumber(_ sender: UIButton) {
-        
-        
-        
     }
     
     func addGradientLayer(view: UIView, aColor: CGColor, bColor: CGColor, cColor: CGColor, dColor: CGColor){

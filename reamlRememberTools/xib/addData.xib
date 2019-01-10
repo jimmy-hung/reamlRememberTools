@@ -182,14 +182,12 @@
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-30" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-Qq-niR" userLabel="選擇年月">
                     <rect key="frame" x="12.5" y="85.5" width="481" height="50.5"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0Y-eB-UB0">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-eL-2Gt">
                             <rect key="frame" x="0.0" y="0.0" width="143" height="50.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="選"/>
-                            <connections>
-                                <action selector="selectNumber:" destination="-1" eventType="touchUpInside" id="12F-vQ-A0B"/>
-                            </connections>
-                        </button>
+                            <color key="textColor" red="0.22231248021125793" green="0.48492830991744995" blue="0.96475106477737427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="年" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1y-fu-der" customClass="KaedeTextField" customModule="TextFieldEffects">
                             <rect key="frame" x="113" y="0.0" width="142.5" height="50.5"/>
                             <nil key="textColor"/>
@@ -210,7 +208,6 @@
                             <state key="normal" title="選"/>
                             <connections>
                                 <action selector="selectMonthAtn:" destination="-1" eventType="touchUpInside" id="LN2-Ap-rcz"/>
-                                <action selector="selectNumber:" destination="-1" eventType="touchUpInside" id="sZf-P3-ybz"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-pG-TKp">
