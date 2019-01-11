@@ -10,8 +10,8 @@ import Foundation
 import RealmSwift
 
 class Stock: Object {
-    @objc dynamic var year : String = ""
-    @objc dynamic var month : String = ""
+    @objc dynamic var year : Int = 0
+    @objc dynamic var month : Int = 0
     @objc dynamic var name : String = ""
     @objc dynamic var number : String = ""
     @objc dynamic var count : String = ""

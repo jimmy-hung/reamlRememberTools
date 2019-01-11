@@ -23,6 +23,8 @@
 		BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DFA21DDF37900E5B604 /* Stock.swift */; };
 		BFD886C921E6106D00ADC441 /* addNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD886C821E6106D00ADC441 /* addNumber.swift */; };
 		BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD886CA21E6107700ADC441 /* addNumber.xib */; };
+		BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */; };
+		BFF7355021E86F1400B4C12F /* YearTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7354F21E86F1400B4C12F /* YearTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		BF109DFA21DDF37900E5B604 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		BFD886C821E6106D00ADC441 /* addNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNumber.swift; sourceTree = "<group>"; };
 		BFD886CA21E6107700ADC441 /* addNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addNumber.xib; sourceTree = "<group>"; };
+		BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTableViewCell.swift; sourceTree = "<group>"; };
+		BFF7354F21E86F1400B4C12F /* YearTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTableViewController.swift; sourceTree = "<group>"; };
 		CF64E39629E9FF6D5D8FF8DB /* Pods-reamlRememberTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reamlRememberTools.release.xcconfig"; path = "Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools.release.xcconfig"; sourceTree = "<group>"; };
 		DBB000EF5D0400BF99AB7A8A /* Pods-reamlRememberTools.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-reamlRememberTools.debug.xcconfig"; path = "Pods/Target Support Files/Pods-reamlRememberTools/Pods-reamlRememberTools.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,11 +104,12 @@
 			children = (
 				BF109DD321DDEC0F00E5B604 /* AppDelegate.swift */,
 				BF109DF821DDECB200E5B604 /* ViewController.swift */,
-				BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */,
 				BF109DEF21DDEC7F00E5B604 /* Main.storyboard */,
 				BF109DDA21DDEC1100E5B604 /* Assets.xcassets */,
-				BF109DFA21DDF37900E5B604 /* Stock.swift */,
+				BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */,
+				BFF7354E21E86B9F00B4C12F /* RealmSwiftData */,
 				BF109DE521DDEC6A00E5B604 /* Tools */,
+				BFF7354721E86B1000B4C12F /* YearTableView */,
 				BF109DEA21DDEC7200E5B604 /* TableView */,
 				BF109DF121DDEC8900E5B604 /* xib */,
 				BF109DDC21DDEC1100E5B604 /* LaunchScreen.storyboard */,
@@ -140,6 +145,23 @@
 				BFD886CA21E6107700ADC441 /* addNumber.xib */,
 			);
 			path = xib;
+			sourceTree = "<group>";
+		};
+		BFF7354721E86B1000B4C12F /* YearTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BFF7354F21E86F1400B4C12F /* YearTableViewController.swift */,
+				BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */,
+			);
+			path = YearTableView;
+			sourceTree = "<group>";
+		};
+		BFF7354E21E86B9F00B4C12F /* RealmSwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				BF109DFA21DDF37900E5B604 /* Stock.swift */,
+			);
+			path = RealmSwiftData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +300,8 @@
 				BF109DD421DDEC0F00E5B604 /* AppDelegate.swift in Sources */,
 				BF109DED21DDEC7200E5B604 /* TableViewViewController.swift in Sources */,
 				BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */,
+				BFF7355021E86F1400B4C12F /* YearTableViewController.swift in Sources */,
+				BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */,
 				BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */,
 				BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */,
 			);

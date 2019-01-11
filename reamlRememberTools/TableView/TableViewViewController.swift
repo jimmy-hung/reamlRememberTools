@@ -74,7 +74,7 @@ class TableViewViewController: UIViewController {
         }
     }
     
-    @IBAction func addAtn(_ sender: UIBarButtonItem) {
+    @IBAction func addAtn(_ sender: UIButton) {
         // insert xib
         if (Bundle.main.loadNibNamed("addData", owner: self, options: nil)?.first as? addData) != nil
         {
@@ -87,6 +87,7 @@ class TableViewViewController: UIViewController {
             self.view.addSubview(addDataView)
         }
     }
+
     
     @IBAction func selectMonthAtn(_ sender: UIButton) {
         
@@ -128,8 +129,8 @@ class TableViewViewController: UIViewController {
         
         let stock = Stock()
         
-        stock.year = yearText.text!
-        stock.month = monthLB.text!
+        stock.year = Int(yearText.text!)!
+        stock.month = Int(monthLB.text!)!
         stock.number = addNumText.text!
         stock.name = addNameText.text!
         stock.count = addCountText.text!
@@ -137,6 +138,8 @@ class TableViewViewController: UIViewController {
         stock.sell_date = addSDateText.text!
         stock.buy_price = addBPriceText.text!
         stock.sell_price = addSPricrText.text!
+        
+        
         
         writteInRealm(stock: stock)
         
@@ -189,6 +192,12 @@ class TableViewViewController: UIViewController {
     func showTheSumTrad(){
         
     }
+    
+    @IBAction func dissmissViewController(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 
 extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
@@ -278,12 +287,10 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
 
     // 每個 section 的標題
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let realm = try! Realm()
-        let stock = realm.objects(Stock.self)
+//        let realm = try! Realm()
+//        let stock = realm.objects(Stock.self)
         
-        let title = ""
-        
-        
+        let title = section == 0 ? "DOG" : "CAT"
         
         return title
     }

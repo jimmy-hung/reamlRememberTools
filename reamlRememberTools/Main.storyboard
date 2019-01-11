@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="O K"/>
                                 <connections>
-                                    <segue destination="Ppp-rj-r9o" kind="push" id="pEV-I4-XjX"/>
+                                    <segue destination="jza-nq-NfE" kind="push" id="GUs-4z-OBU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -48,7 +48,7 @@
         <!--Table View View Controller-->
         <scene sceneID="3On-Cq-byY">
             <objects>
-                <viewController id="Ppp-rj-r9o" customClass="TableViewViewController" customModule="reamlRememberTools" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TableView" id="Ppp-rj-r9o" customClass="TableViewViewController" customModule="reamlRememberTools" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eOb-Uo-ePu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
                                             <outlet property="end_priceLB" destination="C8W-S4-ETG" id="1ZQ-zQ-XSV"/>
                                             <outlet property="nameLB" destination="xwb-uf-rt4" id="4wC-Wh-fHT"/>
                                             <outlet property="numberLB" destination="hm8-5q-U0Z" id="xul-3K-CjM"/>
-                                            <segue destination="LP7-4Z-2bj" kind="push" identifier="goDetail" id="n9L-6U-2H8"/>
+                                            <segue destination="LP7-4Z-2bj" kind="presentation" id="z3d-Fp-lw6"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -163,13 +163,37 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ux-ON-kMj">
+                                <rect key="frame" x="285" y="23.5" width="30" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addAtn:" destination="Ppp-rj-r9o" eventType="touchUpInside" id="C5j-Wx-FHl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Uf-AM-2za">
+                                <rect key="frame" x="60" y="23.5" width="30" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="&lt;"/>
+                                <connections>
+                                    <action selector="dissmissViewController:" destination="Ppp-rj-r9o" eventType="touchUpInside" id="7Fd-1z-IQG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5Ux-ON-kMj" firstAttribute="height" secondItem="7Uf-AM-2za" secondAttribute="height" id="0dC-W1-Jlh"/>
+                            <constraint firstItem="7Uf-AM-2za" firstAttribute="width" secondItem="eOb-Uo-ePu" secondAttribute="width" multiplier="0.08" id="8ee-2L-lh9"/>
                             <constraint firstItem="GZD-g4-cGY" firstAttribute="height" secondItem="eOb-Uo-ePu" secondAttribute="height" multiplier="0.75" id="9dA-jk-FCh"/>
                             <constraint firstItem="GZD-g4-cGY" firstAttribute="width" secondItem="eOb-Uo-ePu" secondAttribute="width" multiplier="0.95" id="Dcl-oo-Vyl"/>
+                            <constraint firstItem="7Uf-AM-2za" firstAttribute="centerX" secondItem="eOb-Uo-ePu" secondAttribute="centerX" multiplier="0.4" id="Mp4-I6-fU5"/>
+                            <constraint firstItem="7Uf-AM-2za" firstAttribute="centerY" secondItem="eOb-Uo-ePu" secondAttribute="centerY" multiplier="0.15" id="PMF-BV-qjl"/>
+                            <constraint firstItem="5Ux-ON-kMj" firstAttribute="centerX" secondItem="eOb-Uo-ePu" secondAttribute="centerX" multiplier="1.6" id="Vvu-Yd-Ijw"/>
                             <constraint firstItem="7MP-2G-wlU" firstAttribute="height" secondItem="eOb-Uo-ePu" secondAttribute="height" multiplier="0.1" id="WFe-Uu-eOe"/>
                             <constraint firstItem="7MP-2G-wlU" firstAttribute="width" secondItem="eOb-Uo-ePu" secondAttribute="width" multiplier="0.9" id="fv5-Jm-KBv"/>
+                            <constraint firstItem="7Uf-AM-2za" firstAttribute="height" secondItem="eOb-Uo-ePu" secondAttribute="height" multiplier="0.08" id="ifz-57-KYB"/>
+                            <constraint firstItem="5Ux-ON-kMj" firstAttribute="width" secondItem="7Uf-AM-2za" secondAttribute="width" id="jry-cJ-Kj7"/>
+                            <constraint firstItem="5Ux-ON-kMj" firstAttribute="centerY" secondItem="eOb-Uo-ePu" secondAttribute="centerY" multiplier="0.15" id="lLi-av-h0i"/>
                             <constraint firstItem="GZD-g4-cGY" firstAttribute="centerY" secondItem="eOb-Uo-ePu" secondAttribute="centerY" id="lUE-Zw-0ym"/>
                             <constraint firstItem="7MP-2G-wlU" firstAttribute="centerY" secondItem="eOb-Uo-ePu" secondAttribute="centerY" multiplier="1.85" id="msv-Ld-Cfv"/>
                             <constraint firstItem="7MP-2G-wlU" firstAttribute="centerX" secondItem="eOb-Uo-ePu" secondAttribute="centerX" id="pDH-gN-nL8"/>
@@ -178,11 +202,7 @@
                         <viewLayoutGuide key="safeArea" id="61r-ZN-Wwv"/>
                     </view>
                     <navigationItem key="navigationItem" id="FuH-Mk-kub">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="VPY-Hj-ku9">
-                            <connections>
-                                <action selector="addAtn:" destination="Ppp-rj-r9o" id="J7U-N8-ygz"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="VPY-Hj-ku9"/>
                     </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="GZD-g4-cGY" id="4jn-9R-bc4"/>
@@ -192,7 +212,70 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDu-1Y-O3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672.8" y="100.29985007496252"/>
+            <point key="canvasLocation" x="2361" y="101"/>
+        </scene>
+        <!--Year Table View Controller-->
+        <scene sceneID="u4i-uk-8tX">
+            <objects>
+                <viewController id="jza-nq-NfE" customClass="YearTableViewController" customModule="reamlRememberTools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fyo-De-pTW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tmL-aJ-duF">
+                                <rect key="frame" x="19" y="100" width="337.5" height="533.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YearCell" textLabel="0Gd-aG-nhz" detailTextLabel="3ed-fJ-WCM" style="IBUITableViewCellStyleValue1" id="gTn-wk-Fwe" customClass="YearTableViewCell" customModule="reamlRememberTools" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="337.5" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gTn-wk-Fwe" id="m1b-jD-vKh">
+                                            <rect key="frame" x="0.0" y="0.0" width="337.5" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0Gd-aG-nhz">
+                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ed-fJ-WCM">
+                                                    <rect key="frame" x="278.5" y="12" width="44" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tmL-aJ-duF" firstAttribute="height" secondItem="fyo-De-pTW" secondAttribute="height" multiplier="0.8" id="884-A5-Kmg"/>
+                            <constraint firstItem="tmL-aJ-duF" firstAttribute="centerY" secondItem="fyo-De-pTW" secondAttribute="centerY" multiplier="1.1" id="Kas-Df-1T5"/>
+                            <constraint firstItem="tmL-aJ-duF" firstAttribute="width" secondItem="fyo-De-pTW" secondAttribute="width" multiplier="0.9" id="oOw-N6-XWh"/>
+                            <constraint firstItem="tmL-aJ-duF" firstAttribute="centerX" secondItem="fyo-De-pTW" secondAttribute="centerX" id="yOr-ta-XSf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pIr-dt-RpN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pN4-jC-dxp">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Dzf-37-do2">
+                            <connections>
+                                <action selector="addAtn:" destination="jza-nq-NfE" id="hsG-OQ-HV7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="YearTableView" destination="tmL-aJ-duF" id="bkV-rg-5mg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xl5-cn-OL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1657" y="101"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="MOO-DM-lG0">
@@ -347,7 +430,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wd1-eY-uJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2478" y="100"/>
+            <point key="canvasLocation" x="3194" y="100"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BBp-Tg-hnw">
