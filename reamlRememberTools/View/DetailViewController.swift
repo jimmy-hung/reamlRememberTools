@@ -25,10 +25,9 @@ class DetailViewController: UIViewController {
     
     let realm = try! Realm()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addVerticalGradientLayer(topColor: .white, bottomColor: .clear)
         showMyData()
     }
     
@@ -47,6 +46,7 @@ class DetailViewController: UIViewController {
     }
         
     func showMyData(){
+        
         nameLB.text = infoData[0].name
         numberLB.text = infoData[0].number
         countLB.text = infoData[0].count
@@ -67,5 +67,15 @@ class DetailViewController: UIViewController {
         
         return spread
     }
+    
+    @IBAction func backAtn(_ sender: UIButton) {
+        UIView.animate(withDuration: 0.8) {
+            self.view.alpha = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+
 }
 
