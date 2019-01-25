@@ -20,8 +20,7 @@
                 <outlet property="addNumText" destination="ybH-Rg-x58" id="A6m-Rz-TrK"/>
                 <outlet property="addSDateText" destination="aCN-a1-7zX" id="IN2-am-y5b"/>
                 <outlet property="addSPricrText" destination="tGA-N8-RUn" id="TZS-OG-o8a"/>
-                <outlet property="monthLB" destination="AGE-pG-TKp" id="1BM-nK-aks"/>
-                <outlet property="yearText" destination="g1y-fu-der" id="JMQ-7c-lbK"/>
+                <outlet property="sureBtn" destination="sE0-an-nr1" id="ENm-Ah-7gT"/>
                 <outletCollection property="collectLB" destination="3V3-nf-4PM" collectionClass="NSMutableArray" id="VzY-vE-Pae"/>
                 <outletCollection property="collectLB" destination="FML-eU-qkD" collectionClass="NSMutableArray" id="hUM-l0-Wco"/>
                 <outletCollection property="collectLB" destination="3IA-Xy-oiO" collectionClass="NSMutableArray" id="cOl-0j-8pp"/>
@@ -34,7 +33,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE0-an-nr1">
-                    <rect key="frame" x="190" y="575" width="126.5" height="50.5"/>
+                    <rect key="frame" x="190" y="543.5" width="126.5" height="50.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                     <state key="normal" title="SURE">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -44,7 +43,7 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-vv-ru3" userLabel="總集合">
-                    <rect key="frame" x="101" y="142" width="304" height="411"/>
+                    <rect key="frame" x="101" y="79" width="304" height="411"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NmD-w6-afy" userLabel="股號">
                             <rect key="frame" x="0.0" y="0.0" width="304" height="41.5"/>
@@ -67,16 +66,16 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zt5-ug-ev8" userLabel="股名">
-                            <rect key="frame" x="0.0" y="61.5" width="304" height="42"/>
+                            <rect key="frame" x="0.0" y="61.5" width="304" height="41.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="股名 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fp-B4-JWh">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="42"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="41.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TBc-bA-ym0">
-                                    <rect key="frame" x="152" y="0.0" width="152" height="42"/>
+                                    <rect key="frame" x="152" y="0.0" width="152" height="41.5"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -87,7 +86,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xwu-kd-qHR" userLabel="張數">
-                            <rect key="frame" x="0.0" y="123.5" width="304" height="41.5"/>
+                            <rect key="frame" x="0.0" y="123" width="304" height="41.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="張數 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6S-Ay-Rum">
                                     <rect key="frame" x="0.0" y="0.0" width="152" height="41.5"/>
@@ -107,7 +106,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-Et-EuM" userLabel="買進日期">
-                            <rect key="frame" x="0.0" y="185" width="304" height="41.5"/>
+                            <rect key="frame" x="0.0" y="184.5" width="304" height="41.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進日期 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3V3-nf-4PM">
                                     <rect key="frame" x="0.0" y="0.0" width="152" height="41.5"/>
@@ -127,7 +126,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V0o-xJ-qSV" userLabel="賣出日期">
-                            <rect key="frame" x="0.0" y="246.5" width="304" height="41.5"/>
+                            <rect key="frame" x="0.0" y="246" width="304" height="41.5"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="賣出日期 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FML-eU-qkD">
                                     <rect key="frame" x="0.0" y="0.0" width="152" height="41.5"/>
@@ -147,16 +146,16 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EvL-0N-V9D" userLabel="買進價格">
-                            <rect key="frame" x="0.0" y="308" width="304" height="41.5"/>
+                            <rect key="frame" x="0.0" y="307.5" width="304" height="42"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="買進價格 ：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZc-Yx-G5t">
-                                    <rect key="frame" x="0.0" y="0.0" width="152" height="41.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="152" height="42"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SDB-A3-b6N">
-                                    <rect key="frame" x="152" y="0.0" width="152" height="41.5"/>
+                                    <rect key="frame" x="152" y="0.0" width="152" height="42"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
@@ -188,98 +187,54 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="yR6-Yv-1mX">
-                    <rect key="frame" x="126.5" y="38" width="253" height="50.5"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="年份" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PfB-lx-ncL">
-                            <rect key="frame" x="0.0" y="0.0" width="126.5" height="50.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月份" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-kS-lfc">
-                            <rect key="frame" x="126.5" y="0.0" width="126.5" height="50.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
-                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-35" translatesAutoresizingMaskIntoConstraints="NO" id="oE9-Qq-niR" userLabel="選擇年月">
-                    <rect key="frame" x="12.5" y="85.5" width="481" height="50.5"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="選" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj6-eL-2Gt">
-                            <rect key="frame" x="0.0" y="0.0" width="146.5" height="50.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" red="0.22231248021125793" green="0.48492830991744995" blue="0.96475106477737427" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="年" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1y-fu-der" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="111.5" y="0.0" width="146.5" height="50.5"/>
-                            <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                    <color key="value" cocoaTouchSystemColor="darkTextColor"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="DVj-iv-hbD"/>
-                            </connections>
-                        </textField>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-5H-etQ">
-                            <rect key="frame" x="223" y="0.0" width="146.5" height="50.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <state key="normal" title="選"/>
-                            <connections>
-                                <action selector="selectMonthAtn:" destination="-1" eventType="touchUpInside" id="LN2-Ap-rcz"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-pG-TKp">
-                            <rect key="frame" x="334.5" y="0.0" width="146.5" height="50.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXW-l2-3Fv">
-                    <rect key="frame" x="430" y="79" width="50.5" height="63"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-5H-etQ">
+                    <rect key="frame" x="405" y="253" width="50.5" height="63"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="選"/>
+                    <connections>
+                        <action selector="selectMonthAtn:" destination="-1" eventType="touchUpInside" id="LN2-Ap-rcz"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK6-cR-sSS">
+                    <rect key="frame" x="405" y="316" width="50.5" height="63"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="選"/>
+                    <connections>
+                        <action selector="selectMonthAtn:" destination="-1" eventType="touchUpInside" id="pYe-Xn-YaC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+            <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="oE9-Qq-niR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.35" id="03C-m9-BcN"/>
-                <constraint firstItem="uXW-l2-3Fv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.8" id="0Kt-0C-yQs"/>
-                <constraint firstItem="yR6-Yv-1mX" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="30S-n5-N6y"/>
-                <constraint firstItem="oE9-Qq-niR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="699-U7-pi0"/>
-                <constraint firstItem="uXW-l2-3Fv" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="BJh-pp-A32"/>
-                <constraint firstItem="oE9-Qq-niR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="LEu-Ti-2g6"/>
-                <constraint firstItem="uXW-l2-3Fv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.35" id="RjT-LG-WY2"/>
-                <constraint firstItem="yR6-Yv-1mX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SFr-Kr-xSW"/>
+                <constraint firstItem="EK6-cR-sSS" firstAttribute="height" secondItem="x4S-5H-etQ" secondAttribute="height" id="15Y-kb-FtV"/>
+                <constraint firstItem="x4S-5H-etQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="22v-XQ-OKR"/>
+                <constraint firstItem="x4S-5H-etQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.9" id="2kx-bS-1Mj"/>
+                <constraint firstItem="EK6-cR-sSS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.1" id="IcB-aF-vvV"/>
+                <constraint firstItem="x4S-5H-etQ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="JYW-m7-pWI"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T5J-MW-WtN"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="Vaz-fU-awp"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="Vd2-6T-xSy"/>
-                <constraint firstItem="oE9-Qq-niR" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.95" id="XSk-WV-k3B"/>
-                <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.1" id="aO6-of-va6"/>
+                <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.9" id="aO6-of-va6"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="dX7-V2-R8r"/>
-                <constraint firstItem="sE0-an-nr1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.9" id="jhk-21-aqB"/>
-                <constraint firstItem="uXW-l2-3Fv" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="lPw-Y3-Se4"/>
+                <constraint firstItem="sE0-an-nr1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.8" id="jhk-21-aqB"/>
+                <constraint firstItem="x4S-5H-etQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.7" id="l0N-T1-3np"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lpV-Hz-0vf"/>
-                <constraint firstItem="yR6-Yv-1mX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.5" id="qN6-wa-mjx"/>
-                <constraint firstItem="yR6-Yv-1mX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.2" id="rbu-72-IAy"/>
+                <constraint firstItem="EK6-cR-sSS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.7" id="mGw-Jd-PEC"/>
+                <constraint firstItem="EK6-cR-sSS" firstAttribute="width" secondItem="x4S-5H-etQ" secondAttribute="width" id="q8Y-uM-MOk"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.65" id="rnY-Rq-cID"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-1530" y="-38"/>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="QOB-gn-UcJ" appends="YES" id="r9q-RA-Fk9"/>
+            </connections>
+            <point key="canvasLocation" x="-1886.4000000000001" y="5.3973013493253381"/>
         </view>
+        <tapGestureRecognizer id="QOB-gn-UcJ">
+            <connections>
+                <action selector="addGestureCheckData:" destination="-1" id="nLw-Km-9Jw"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

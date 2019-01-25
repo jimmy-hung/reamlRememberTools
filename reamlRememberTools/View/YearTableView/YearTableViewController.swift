@@ -17,6 +17,7 @@ class YearTableViewController: UIViewController {
     @IBOutlet weak var sumLb: UILabel!
     
     var transitionView = false
+    var realmAction = RealmAction()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,6 @@ class YearTableViewController: UIViewController {
         
         // 分隔線的樣式
         yearTableView.separatorStyle = .none
-        // Do any additional setup after loading the view.
         
         countSumTrade()
     }
@@ -59,7 +59,7 @@ class YearTableViewController: UIViewController {
         let results = myData.sorted(byKeyPath: "year")
         
         let indexPath = yearTableView.indexPathForSelectedRow ?? []
-        let index = results.filter("year = \(results[indexPath.row].year)")    //  [results[indexPath.row]]
+        let index = results.filter("year = \(myDataArray[indexPath.row])")
         
         if segue.identifier == "goTable"{
             if myDataArray.count != 0 {
@@ -104,28 +104,25 @@ extension YearTableViewController : UITableViewDataSource, UITableViewDelegate{
         
         // 重新獲取資料確保完整性
         myDataArray = []
-        if stock.count != 0{
-            myDataArray = [stock[0].year]
-        }
         
         // 接出realm裡 年 的資料
         if stock.count != 0 {
             for i in 0 ... (stock.count - 1){
-                if stock[0].year != stock[i].year{
-                    myDataArray.append(stock[i].year)
-                }
-                // 將陣列從小排到大 ( reverse() 大 - 小 )
-                myDataArray.sort()
+                myDataArray.append(stock[i].year)
             }
+
+            myDataArray = myDataArray.removingDuplicates()
+            // 將陣列從小排到大 ( reverse() 大 - 小 )
+            myDataArray.sort()
         }
         
         countSumTrade() // 重置交易次數
         
         // 計算不同年份的數量，列出cell
         var yearSum = 1
-        if stock.count != 0 {
-            for i in  0 ... (stock.count - 1) {
-                if stock[0].year != stock[i].year{
+        if myDataArray.count != 0 {
+            for i in  0 ... (myDataArray.count - 1) {
+                if myDataArray[0] != myDataArray[i] {
                     yearSum += 1
                 }
             }
@@ -156,29 +153,21 @@ extension YearTableViewController : UITableViewDataSource, UITableViewDelegate{
         return yearCell
     }
     
-    // 點選 cell 後執行的動作
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 取消 cell 的選取狀態
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        let realm = try! Realm()
-
-        let myData = realm.objects(Stock.self)
-
-        let name = myData[indexPath.row].name
-        //        let name = info[indexPath.section][indexPath.row]
-        print("選擇的是 \(name)")
+    // cell 右滑刪除
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
     
-    // 點選 Accessory 按鈕後執行的動作
-    // 必須設置 cell 的 accessoryType
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-
+    // 刪除 realm 資料 與 tableView 的 cell
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         let realm = try! Realm()
-        let stock = realm.objects(Stock.self)
-
-        let name = stock[indexPath.row].name
-        print("按下的是 \(name) 的 detail")
+        let stock = realm.objects(Stock.self).filter("year = \(myDataArray[indexPath.row]) ")
+        
+        for i in 1...stock.count{
+            realmAction.deleteRealm(stock: stock[i - 1])
+        }
+        
+        tableView.deleteRows(at: [indexPath], with: .fade)
     }
-    
 }

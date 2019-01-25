@@ -23,7 +23,9 @@ class TableViewViewController: UIViewController {
     @IBOutlet weak var sumLB: UILabel!
     
     let vc = ViewController()
+    let realmAction = RealmAction()
     let monthArray = ["一"," 二","三","四","五","六","七","八","九","十","十一","十二"]
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBOutlet weak var addNumText: UITextField!
     @IBOutlet weak var addNameText: UITextField!
@@ -33,16 +35,17 @@ class TableViewViewController: UIViewController {
     @IBOutlet weak var addBPriceText: UITextField!
     @IBOutlet weak var addSPricrText: UITextField!
     
-    @IBOutlet weak var yearText: UITextField!
-    @IBOutlet weak var monthLB: UILabel!
-    
     @IBOutlet var collectLB: [UILabel]!
     var clearView = false
+    var recordYear = ""
+    var recordMonth = ""
     
     let addCropView = UIView()
     @IBOutlet var addGestureBtn: UITapGestureRecognizer!
+    @IBOutlet weak var sureBtn: UIButton!
     
     var transition = false
+    var buy_sell_date = 0
     
     var infoDataYear:Results<Stock>!
     
@@ -82,15 +85,9 @@ class TableViewViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-//        let realm = try! Realm()
-//
-//        let myData = realm.objects(Stock.self)
-
         let indexPath = myTableView.indexPathForSelectedRow ?? []
         let index = [infoDataYear[indexPath.row]]
-        
-
+    
         if segue.identifier == "goDetail"{
             if let nextVC = segue.destination as? DetailViewController{
                 nextVC.infoData = index
@@ -116,13 +113,14 @@ class TableViewViewController: UIViewController {
             addCropView.addGestureRecognizer(addGestureBtn)
         }
         
+        addBDateText.delegate = self
+        addSDateText.delegate = self
+        
         for i in 0...collectLB.count-1{
             collectLB[i].adjustsFontSizeToFitWidth = true
         }
-        
-        if infoDataYear != nil{
-            yearText.text = String(infoDataYear![0].year)
-        }
+
+        sureBtn.alpha = 0
         clearView = true
     }
     
@@ -139,30 +137,39 @@ class TableViewViewController: UIViewController {
             addNumberView.getCorner(cornerItem: addNumberView, myCorner: 60, cornerBG: .white)
             self.view.addSubview(addNumberView)
         }
-    }
-    
-    @IBAction func sureMonthAtn(_ sender: UIButton) {
-        switch sender.tag {
-        default:
-            checkoutBtn(sender: sender)
-        }
-    }
-    
-    func checkoutBtn(sender: UIButton){
-        sender.getCorner(cornerItem: sender, myCorner: 15, cornerBG: .white)
-        sender.backgroundColor = .yellow
         
-        monthLB.text = String(sender.tag)
-        UIView.animate(withDuration: 3) {
-            self.addNumberView.alpha = 0
-        }
+        if sender.tag == 0 { buy_sell_date = 0 }
+        else if sender.tag == 1 { buy_sell_date = 1 }
+        
     }
+    
+    @IBAction func dateDoneAtn(_ sender: UIButton) {
+        addNumberView.removeFromSuperview()
+    }
+    
+    
+    @IBAction func datePickerAction(_ sender: UIDatePicker) {
+        let dateValue = DateFormatter() ; let yearValue = DateFormatter() ; let monthValue = DateFormatter()
+        dateValue.dateFormat = "YYYY.MM.dd"
+        yearValue.dateFormat = "YYYY"
+        monthValue.dateFormat = "MM"
+        
+        if buy_sell_date == 0 {
+            addBDateText.text = dateValue.string(from: datePicker.date)
+            recordYear = yearValue.string(from: datePicker.date)
+            recordMonth = monthValue.string(from: datePicker.date)
+        }else if buy_sell_date == 1 {
+            addSDateText.text = dateValue.string(from: datePicker.date)
+        }
+        
+    }
+    
     
     @IBAction func sureAtn(){
         
         let stock = Stock()
-        stock.year = Int(yearText.text!)!
-        stock.month = Int(monthLB.text!)!
+        stock.year = Int(recordYear)!
+        stock.month = Int(recordMonth)!
         stock.number = addNumText.text!
         stock.name = addNameText.text!
         stock.count = addCountText.text!
@@ -171,11 +178,11 @@ class TableViewViewController: UIViewController {
         stock.buy_price = addBPriceText.text!
         stock.sell_price = addSPricrText.text!
     
-        writteInRealm(stock: stock)
-                
+        realmAction.writteInRealm(stock: stock)
+        
         myTableView.reloadData()
         
-        if infoDataYear!.count != 0{
+        if infoDataYear != nil{
             countSumTrade()
         }
         
@@ -212,18 +219,7 @@ class TableViewViewController: UIViewController {
         }
         sumLB.text = String(Int(sum.roundTo(places: 2)))
     }
-    
-    func writteInRealm(stock: Stock){
-        let realm = try! Realm()
-        try! realm.write {
-            realm.add(stock)
-        }
-    }
-    
-    func showTheSumTrad(){
-        
-    }
-    
+
     @IBAction func dissmissViewController(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
@@ -233,6 +229,13 @@ class TableViewViewController: UIViewController {
             addAlert(titleContent: "貼心提醒", messageContent: "是否確定結束編輯", isWhitch: "A")
         }
     }
+    
+    @IBAction func addGestureCheckData(_ sender: UITapGestureRecognizer) {
+        if addNumText.text != "" && addNameText.text != "" && addCountText.text != "" && addBDateText.text != "" && addSDateText.text != "" && addBPriceText.text != "" && addSPricrText.text != "" {
+            sureBtn.alpha = 1
+        }
+    }
+    
     
     func addAlert (titleContent: String, messageContent: String, isWhitch: String)
     {
@@ -266,9 +269,6 @@ class TableViewViewController: UIViewController {
     @IBAction func checkoutTxt(_ sender: UITextField) {
         
         switch sender.tag {
-        case 0:
-            checkLong(sender: sender, howLong: 4)
-            if Int(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請確認資料內容", isWhitch: "B") ; sender.text = "" }
         case 1:
             checkLong(sender: sender, howLong: 4)
             if Int(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請輸入四位數股號", isWhitch: "B") ; sender.text = "" }
@@ -303,6 +303,8 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
         // 設置 Accessory 按鈕樣式
         cell.accessoryType = .disclosureIndicator
         
+        infoDataYear = infoDataYear.sorted(byKeyPath: "month")
+        
         let useInfo = infoDataYear[indexPath.row]
         
         // 顯示的內容
@@ -324,46 +326,8 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
 
     }
     
-    // 點選 cell 後執行的動作
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 取消 cell 的選取狀態
-        tableView.deselectRow(at: indexPath, animated: true)
-
-        let realm = try! Realm()
-
-        let myData = realm.objects(Stock.self)
-
-        let name = myData[indexPath.row].name
-//        let name = info[indexPath.section][indexPath.row]
-        print("選擇的是 \(name)")
-    }
-
-    // 點選 Accessory 按鈕後執行的動作
-    // 必須設置 cell 的 accessoryType
-    func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-
-        let realm = try! Realm()
-
-        let stock = realm.objects(Stock.self)
-
-        let name = stock[indexPath.row].name
-        print("按下的是 \(name) 的 detail")
-    }
-
     // 有幾組 section
     func numberOfSections(in tableView: UITableView) -> Int {
-        let realm = try! Realm()
-        let stock = realm.objects(Stock.self)
-
-        var yearSum = 1
-        if stock.count != 0 {
-            for i in  0 ... (stock.count - 1) {
-                if stock[0].year != stock[i].year{
-                    yearSum += 1
-                }
-            }
-        }
-        
         return 1
     }
 
@@ -372,9 +336,18 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
         let title = "1.股名        " + "2.股號       " + "3.張數    " + "4.總價差"
         return title
     }
-
+    
+    // cell 右滑刪除
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        realmAction.deleteRealm(stock: infoDataYear[indexPath.row])
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+    
 }
-
 
 extension TableViewViewController: UITextFieldDelegate {
  
@@ -387,37 +360,16 @@ extension TableViewViewController: UITextFieldDelegate {
         }
     }
     
-    func checkNum () {
+    // 限制不讓編輯日期格式
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField.tag{
+        case 4:
+            return false
+        case 5:
+            return false
+        default:
+            return true
+        }
     }
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//
-//        textField.delegate = self
-//
-//        if textField.tag == 0 || textField.tag == 1 || textField.tag == 3 {
-//            let length = string.lengthOfBytes(using: String.Encoding.utf8)
-//
-//            for loopIndex in 0...length {
-//                let char = (string as NSString).character(at: loopIndex)
-//                if char < 48 {textField.text = ""}
-//                if char > 57 {textField.text = ""}
-//            }
-//
-//            let proposeLength = (textField.text?.lengthOfBytes(using: String.Encoding.utf8))! - range.length + string.lengthOfBytes(using: String.Encoding.utf8)
-//
-//             if proposeLength > 4 {textField.text = ""}
-//
-//
-//        }else if textField.tag == 3 {
-//            let length = string.lengthOfBytes(using: String.Encoding.utf8)
-//
-//            for loopIndex in 0...length {
-//                let char = (string as NSString).character(at: loopIndex)
-//                if char < 48 {textField.text = ""}
-//                if char > 57 {textField.text = ""}
-//            }
-//        }
-//        return true
-//    }
 
 }

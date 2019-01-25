@@ -21,9 +21,22 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var sell_priceLB: UILabel!
     @IBOutlet weak var resultLB: UILabel!
     
+    @IBOutlet weak var editName: UITextField!
+    @IBOutlet weak var editNumber: UITextField!
+    @IBOutlet weak var editCount: UITextField!
+    @IBOutlet weak var editBuy_price: UITextField!
+    @IBOutlet weak var editBuy_date: UITextField!
+    @IBOutlet weak var editSell_price: UITextField!
+    @IBOutlet weak var editSell_date: UITextField!
+    @IBOutlet var editView: UIView!
+    let addCropView = UIView()
+
+    
     var infoData:[Stock]! = []
     
     let realm = try! Realm()
+    
+    let uponView = TableViewViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,5 +90,20 @@ class DetailViewController: UIViewController {
         }
     }
 
+    @IBAction func editAtn(_ sender: UIButton) {
+       
+        if (Bundle.main.loadNibNamed("editData", owner: self, options: nil)?.first as! editData) != nil {
+            editView.frame.size.width = view.frame.size.width * 0.8
+            editView.frame.size.height = view.frame.size.height * 0.6
+            editView.frame.origin.x = self.view.frame.size.width * 0.2 / 2
+            editView.frame.origin.y = self.view.frame.size.height * 0.4 / 2
+            editView.getCorner(cornerItem: editView, myCorner: 30, cornerBG: .white)
+            
+            
+        }
+        
+    }
+    
+    
 }
 

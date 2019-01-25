@@ -22,6 +22,11 @@
 		BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF821DDECB200E5B604 /* ViewController.swift */; };
 		BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DFA21DDF37900E5B604 /* Stock.swift */; };
 		BF56900E21F5C5F700FFF61C /* CheckNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */; };
+		BF56903621FAE64000FFF61C /* realmAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56903521FAE63F00FFF61C /* realmAction.swift */; };
+		BF56903C21FB4E7100FFF61C /* editNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56903821FB4E7100FFF61C /* editNumber.swift */; };
+		BF56903D21FB4E7100FFF61C /* editNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56903921FB4E7100FFF61C /* editNumber.xib */; };
+		BF56903E21FB4E7100FFF61C /* editData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56903A21FB4E7100FFF61C /* editData.swift */; };
+		BF56903F21FB4E7100FFF61C /* editData.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56903B21FB4E7100FFF61C /* editData.xib */; };
 		BFD886C921E6106D00ADC441 /* addNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD886C821E6106D00ADC441 /* addNumber.swift */; };
 		BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD886CA21E6107700ADC441 /* addNumber.xib */; };
 		BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */; };
@@ -46,6 +51,11 @@
 		BF109DF821DDECB200E5B604 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF109DFA21DDF37900E5B604 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetwork.swift; sourceTree = "<group>"; };
+		BF56903521FAE63F00FFF61C /* realmAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realmAction.swift; sourceTree = "<group>"; };
+		BF56903821FB4E7100FFF61C /* editNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editNumber.swift; sourceTree = "<group>"; };
+		BF56903921FB4E7100FFF61C /* editNumber.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = editNumber.xib; sourceTree = "<group>"; };
+		BF56903A21FB4E7100FFF61C /* editData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editData.swift; sourceTree = "<group>"; };
+		BF56903B21FB4E7100FFF61C /* editData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = editData.xib; sourceTree = "<group>"; };
 		BFD886C821E6106D00ADC441 /* addNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNumber.swift; sourceTree = "<group>"; };
 		BFD886CA21E6107700ADC441 /* addNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addNumber.xib; sourceTree = "<group>"; };
 		BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,6 +148,7 @@
 				BF109DF321DDEC8900E5B604 /* addData.xib */,
 				BFD886C821E6106D00ADC441 /* addNumber.swift */,
 				BFD886CA21E6107700ADC441 /* addNumber.xib */,
+				BF56903721FB4E7100FFF61C /* edit */,
 			);
 			path = xib;
 			sourceTree = "<group>";
@@ -175,6 +186,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BF56903721FB4E7100FFF61C /* edit */ = {
+			isa = PBXGroup;
+			children = (
+				BF56903821FB4E7100FFF61C /* editNumber.swift */,
+				BF56903921FB4E7100FFF61C /* editNumber.xib */,
+				BF56903A21FB4E7100FFF61C /* editData.swift */,
+				BF56903B21FB4E7100FFF61C /* editData.xib */,
+			);
+			path = edit;
+			sourceTree = "<group>";
+		};
 		BFF7354721E86B1000B4C12F /* YearTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				BF109DFA21DDF37900E5B604 /* Stock.swift */,
+				BF56903521FAE63F00FFF61C /* realmAction.swift */,
 			);
 			path = RealmSwiftData;
 			sourceTree = "<group>";
@@ -256,6 +279,8 @@
 				BF109DDE21DDEC1100E5B604 /* LaunchScreen.storyboard in Resources */,
 				BF109DDB21DDEC1100E5B604 /* Assets.xcassets in Resources */,
 				BF109DF521DDEC8900E5B604 /* addData.xib in Resources */,
+				BF56903D21FB4E7100FFF61C /* editNumber.xib in Resources */,
+				BF56903F21FB4E7100FFF61C /* editData.xib in Resources */,
 				BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF56900E21F5C5F700FFF61C /* CheckNetwork.swift in Sources */,
+				BF56903621FAE64000FFF61C /* realmAction.swift in Sources */,
 				BFD886C921E6106D00ADC441 /* addNumber.swift in Sources */,
 				BF109DE821DDEC6A00E5B604 /* myTools.swift in Sources */,
 				BF109DF421DDEC8900E5B604 /* addData.swift in Sources */,
@@ -328,6 +354,8 @@
 				BF109DE921DDEC6A00E5B604 /* Double.swift in Sources */,
 				BF109DD421DDEC0F00E5B604 /* AppDelegate.swift in Sources */,
 				BF109DED21DDEC7200E5B604 /* TableViewViewController.swift in Sources */,
+				BF56903E21FB4E7100FFF61C /* editData.swift in Sources */,
+				BF56903C21FB4E7100FFF61C /* editNumber.swift in Sources */,
 				BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */,
 				BFF7355021E86F1400B4C12F /* YearTableViewController.swift in Sources */,
 				BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */,
