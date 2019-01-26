@@ -33,6 +33,9 @@
                     <state key="normal" title="SURE">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
+                    <connections>
+                        <action selector="editSureAtn:" destination="-1" eventType="touchUpInside" id="x5z-i2-EQB"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZNF-vv-ru3" userLabel="總集合">
                     <rect key="frame" x="101" y="79" width="304" height="411"/>
@@ -51,6 +54,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="ag9-SO-ZP8"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -68,6 +74,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="51V-Ec-45d"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -85,6 +94,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="wg0-WU-dar"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -102,6 +114,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="TsM-BR-jho"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -119,6 +134,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="kbi-jX-GMI"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -136,6 +154,9 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="Miu-4L-JGv"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
@@ -153,18 +174,16 @@
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    <connections>
+                                        <action selector="checkoutTxt:" destination="-1" eventType="editingDidEnd" id="X8t-jc-8up"/>
+                                    </connections>
                                 </textField>
                             </subviews>
                         </stackView>
                     </subviews>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4S-5H-etQ">
-                    <rect key="frame" x="405" y="253" width="50.5" height="63"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="選"/>
-                </button>
                 <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EK6-cR-sSS">
-                    <rect key="frame" x="405" y="316" width="50.5" height="63"/>
+                    <rect key="frame" x="415" y="329.5" width="30" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="選"/>
                 </button>
@@ -172,33 +191,27 @@
             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
             <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="EK6-cR-sSS" firstAttribute="height" secondItem="x4S-5H-etQ" secondAttribute="height" id="15Y-kb-FtV"/>
-                <constraint firstItem="x4S-5H-etQ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.1" id="22v-XQ-OKR"/>
-                <constraint firstItem="x4S-5H-etQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.9" id="2kx-bS-1Mj"/>
                 <constraint firstItem="EK6-cR-sSS" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.1" id="IcB-aF-vvV"/>
-                <constraint firstItem="x4S-5H-etQ" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.1" id="JYW-m7-pWI"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="T5J-MW-WtN"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.08" id="Vaz-fU-awp"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.25" id="Vd2-6T-xSy"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.9" id="aO6-of-va6"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="dX7-V2-R8r"/>
                 <constraint firstItem="sE0-an-nr1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="1.8" id="jhk-21-aqB"/>
-                <constraint firstItem="x4S-5H-etQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.7" id="l0N-T1-3np"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="lpV-Hz-0vf"/>
                 <constraint firstItem="EK6-cR-sSS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.7" id="mGw-Jd-PEC"/>
-                <constraint firstItem="EK6-cR-sSS" firstAttribute="width" secondItem="x4S-5H-etQ" secondAttribute="width" id="q8Y-uM-MOk"/>
                 <constraint firstItem="ZNF-vv-ru3" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.65" id="rnY-Rq-cID"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outletCollection property="gestureRecognizers" destination="QOB-gn-UcJ" appends="YES" id="r9q-RA-Fk9"/>
+                <outletCollection property="gestureRecognizers" destination="ECs-Ec-vje" appends="YES" id="cYE-Pu-r3y"/>
             </connections>
             <point key="canvasLocation" x="-1886.4000000000001" y="5.3973013493253381"/>
         </view>
-        <tapGestureRecognizer id="QOB-gn-UcJ">
+        <tapGestureRecognizer id="ECs-Ec-vje">
             <connections>
-                <action selector="addGestureCheckData:" destination="-1" id="nLw-Km-9Jw"/>
+                <action selector="tapGesture:" destination="-1" id="1gR-Ds-kL7"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

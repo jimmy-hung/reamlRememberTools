@@ -127,8 +127,7 @@ class TableViewViewController: UIViewController {
     @IBAction func selectMonthAtn(_ sender: UIButton) {
         
         // insert xib
-        if (Bundle.main.loadNibNamed("addNumber", owner: self, options: nil)?.first as? addNumber) != nil
-        {
+        if (Bundle.main.loadNibNamed("addNumber", owner: self, options: nil)?.first as? addNumber) != nil{
             addNumberView.frame.size.width = view.frame.size.width * 0.8
             addNumberView.frame.size.height = view.frame.size.height * 0.6
             addNumberView.frame.origin.x = self.view.frame.size.width * 0.2 / 2
@@ -137,16 +136,13 @@ class TableViewViewController: UIViewController {
             addNumberView.getCorner(cornerItem: addNumberView, myCorner: 60, cornerBG: .white)
             self.view.addSubview(addNumberView)
         }
-        
         if sender.tag == 0 { buy_sell_date = 0 }
         else if sender.tag == 1 { buy_sell_date = 1 }
-        
     }
     
     @IBAction func dateDoneAtn(_ sender: UIButton) {
         addNumberView.removeFromSuperview()
     }
-    
     
     @IBAction func datePickerAction(_ sender: UIDatePicker) {
         let dateValue = DateFormatter() ; let yearValue = DateFormatter() ; let monthValue = DateFormatter()
@@ -161,9 +157,7 @@ class TableViewViewController: UIViewController {
         }else if buy_sell_date == 1 {
             addSDateText.text = dateValue.string(from: datePicker.date)
         }
-        
     }
-    
     
     @IBAction func sureAtn(){
         
@@ -237,8 +231,7 @@ class TableViewViewController: UIViewController {
     }
     
     
-    func addAlert (titleContent: String, messageContent: String, isWhitch: String)
-    {
+    func addAlert (titleContent: String, messageContent: String, isWhitch: String){
         let alertController = UIAlertController(title: titleContent, message: messageContent, preferredStyle: .alert)
 
         if isWhitch == "A"{
@@ -281,7 +274,6 @@ class TableViewViewController: UIViewController {
         default:
             print("")
         }
-        
     }
 }
 

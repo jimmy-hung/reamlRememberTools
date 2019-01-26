@@ -6,7 +6,6 @@
 //  Copyright © 2018 洪立德. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIView {
@@ -39,7 +38,5 @@ extension Date {
         let components = Calendar.current.dateComponents([.day], from: self, to: toDate)
         return components.day ?? 0
     }
-    
-    
 }
 

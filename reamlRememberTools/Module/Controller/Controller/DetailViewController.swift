@@ -30,7 +30,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var editSell_date: UITextField!
     @IBOutlet var editView: UIView!
     let addCropView = UIView()
-
+    let realmAction = RealmAction()
     
     var infoData:[Stock]! = []
     
@@ -102,6 +102,28 @@ class DetailViewController: UIViewController {
             
             self.view.addSubview(editView)
             showEditData()
+            
+            editName.delegate = self
+            editNumber.delegate = self
+            editSell_date.delegate = self
+            editBuy_date.delegate = self
+        }
+    }
+    
+    @IBAction func checkoutTxt(_ sender: UITextField) {
+        
+        switch sender.tag {
+        case 1:
+            checkLong(sender: sender, howLong: 4)
+            if Int(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請輸入四位數股號") ; sender.text = "" }
+        case 3:
+            if Int(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請輸入股票張數") ; sender.text = "" }
+        case 6:
+            if Float(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請確認資料內容") ; sender.text = "" }
+        case 7:
+            if Float(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請確認資料內容") ; sender.text = "" }
+        default:
+            print("")
         }
     }
     
@@ -114,6 +136,62 @@ class DetailViewController: UIViewController {
         editSell_price.text = sell_priceLB.text
         editSell_date.text = sell_dateLB.text
     }
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        
+        addAlert(titleContent: "系統提示", messageContent: "確定要提前結束編輯嗎")
     
+    }
+    
+    func addAlert (titleContent: String, messageContent: String){
+       
+        let alertController = UIAlertController(title: titleContent, message: messageContent, preferredStyle: .alert)
+        let secAction = UIAlertAction(title: "sure", style: .cancel) { (alertAction) in
+                if messageContent == "確定要提前結束編輯嗎" {
+                    UIView.animate(withDuration: 0.8, animations: {
+                        self.editView.alpha = 0
+                    })
+                    DispatchQueue.main.asyncAfter(deadline: .now()+1, execute: {
+                        self.editView.removeFromSuperview()
+                    })
+                }
+            }
+            alertController.addAction(secAction)
+            self.present(alertController, animated: true, completion: nil)
+    }
+    
+    @IBAction func editSureAtn(_ sender: UIButton) {
+        
+        let realm = try! Realm()
+        let editMyData = realm.objects(Stock.self).filter("buy_date = '\(buy_dateLB.text!)' AND number = '\(numberLB.text!)'")
+        
+        realmAction.upDate(data: editMyData[0])
+    }
 }
 
+extension DetailViewController: UITextFieldDelegate {
+    
+    func checkLong (sender: UITextField, howLong: Int) {
+        sender.delegate = self
+        if (sender.text?.count)! <= howLong{  }
+        else if (sender.text?.count)! > howLong {
+            sender.text = ""
+            addAlert(titleContent: "注意", messageContent: "不可超過四位數")
+        }
+    }
+    
+    // 限制不讓編輯日期格式
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        switch textField.tag{
+        case 1:
+            return false
+        case 2:
+            return false
+        case 4:
+            return false
+        case 5:
+            return false
+        default:
+            return true
+        }
+    }
+}

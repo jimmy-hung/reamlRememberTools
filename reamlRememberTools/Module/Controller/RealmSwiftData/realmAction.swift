@@ -21,6 +21,14 @@ class RealmAction : NSObject{
         }
     }
     
+    // 更新資料
+    func upDate (data: Stock){
+        try! realm.write {
+            // 必須有定義key值才能傳入true
+            realm.add(data, update: true)
+        }
+    }
+    
     // 刪除資料
     func deleteRealm(stock: Stock){
         try! realm.write {
