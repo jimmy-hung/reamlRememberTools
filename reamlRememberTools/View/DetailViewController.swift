@@ -92,18 +92,28 @@ class DetailViewController: UIViewController {
 
     @IBAction func editAtn(_ sender: UIButton) {
        
-        if (Bundle.main.loadNibNamed("editData", owner: self, options: nil)?.first as! editData) != nil {
+        if (Bundle.main.loadNibNamed("editData", owner: self, options: nil)?.first as? editData) != nil {
+            
             editView.frame.size.width = view.frame.size.width * 0.8
             editView.frame.size.height = view.frame.size.height * 0.6
             editView.frame.origin.x = self.view.frame.size.width * 0.2 / 2
             editView.frame.origin.y = self.view.frame.size.height * 0.4 / 2
             editView.getCorner(cornerItem: editView, myCorner: 30, cornerBG: .white)
             
-            
+            self.view.addSubview(editView)
+            showEditData()
         }
-        
     }
     
+    func showEditData(){
+        editName.text = nameLB.text
+        editNumber.text = numberLB.text
+        editCount.text = countLB.text
+        editBuy_price.text = buy_priceLB.text
+        editBuy_date.text = buy_dateLB.text
+        editSell_price.text = sell_priceLB.text
+        editSell_date.text = sell_dateLB.text
+    }
     
 }
 

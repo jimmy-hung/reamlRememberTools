@@ -486,9 +486,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-Bc-HZA">
-                                <rect key="frame" x="308" y="51" width="46" height="30"/>
+                                <rect key="frame" x="316" y="51" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="edit"/>
                                 <connections>
                                     <action selector="editAtn:" destination="LP7-4Z-2bj" eventType="touchUpInside" id="y5g-wS-yF8"/>
                                 </connections>

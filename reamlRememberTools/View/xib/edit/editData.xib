@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="reamlRememberTools" customModuleProvider="target">
             <connections>
-                <outlet property="addDataView" destination="iN0-l3-epB" id="9P5-jF-qLM"/>
                 <outlet property="editBuy_date" destination="qDb-0L-ec1" id="kni-Zk-6JQ"/>
                 <outlet property="editBuy_price" destination="SDB-A3-b6N" id="7Dh-AN-GIX"/>
                 <outlet property="editCount" destination="cf9-KD-cWJ" id="TZD-bU-5Rk"/>
