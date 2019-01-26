@@ -186,6 +186,9 @@
                     <rect key="frame" x="415" y="329.5" width="30" height="36"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <state key="normal" title="選"/>
+                    <connections>
+                        <action selector="addDateAtn:" destination="-1" eventType="touchUpInside" id="GjS-fc-s2B"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>

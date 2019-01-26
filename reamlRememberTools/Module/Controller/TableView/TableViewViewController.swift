@@ -224,6 +224,7 @@ class TableViewViewController: UIViewController {
         }
     }
     
+    // 若欄位都有填寫tap過後出現按鈕選項
     @IBAction func addGestureCheckData(_ sender: UITapGestureRecognizer) {
         if addNumText.text != "" && addNameText.text != "" && addCountText.text != "" && addBDateText.text != "" && addSDateText.text != "" && addBPriceText.text != "" && addSPricrText.text != "" {
             sureBtn.alpha = 1

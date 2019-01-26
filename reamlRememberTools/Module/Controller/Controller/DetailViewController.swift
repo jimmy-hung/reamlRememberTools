@@ -29,6 +29,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var editSell_price: UITextField!
     @IBOutlet weak var editSell_date: UITextField!
     @IBOutlet var editView: UIView!
+    @IBOutlet var editNumberView: editNumber!
+    @IBOutlet weak var changedDateBtn: UIDatePicker!
     let addCropView = UIView()
     let realmAction = RealmAction()
     
@@ -188,6 +190,33 @@ class DetailViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now()+1.25) {
             self.dismiss(animated: false, completion: nil)
+        }
+    }
+    
+    @IBAction func addDateAtn(_ sender: UIButton) {
+        if ((Bundle.main.loadNibNamed("editNumber", owner: self, options: nil)?.first as? editNumber) != nil) {
+            editNumberView.frame.size.width = view.frame.size.width * 0.8
+            editNumberView.frame.size.height = view.frame.size.height * 0.6
+            editNumberView.frame.origin.x = self.view.frame.size.width * 0.2 / 2
+            editNumberView.frame.origin.y = self.view.frame.size.height * 0.4 / 2
+            editNumberView.getCorner(cornerItem: editNumberView, myCorner: 30, cornerBG: .white)
+            
+            self.view.addSubview(editNumberView)
+        }
+    }
+    
+    @IBAction func addDateCanlander(_ sender: UIDatePicker) {
+        let dateValue = DateFormatter()
+        dateValue.dateFormat = "YYYY.MM.dd"
+        editSell_date.text = dateValue.string(from: changedDateBtn.date)
+    }
+    
+    @IBAction func sureDateAtn(_ sender: UIButton){
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.8) {
+            self.editNumberView.alpha = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.editNumberView.removeFromSuperview()
         }
     }
 }
