@@ -145,6 +145,8 @@ class DetailViewController: UIViewController {
     func addAlert (titleContent: String, messageContent: String){
        
         let alertController = UIAlertController(title: titleContent, message: messageContent, preferredStyle: .alert)
+        
+        let firAction = UIAlertAction(title: "no", style: .default, handler: nil)
         let secAction = UIAlertAction(title: "sure", style: .cancel) { (alertAction) in
                 if messageContent == "確定要提前結束編輯嗎" {
                     UIView.animate(withDuration: 0.8, animations: {
@@ -155,7 +157,9 @@ class DetailViewController: UIViewController {
                     })
                 }
             }
+        
             alertController.addAction(secAction)
+            alertController.addAction(firAction)
             self.present(alertController, animated: true, completion: nil)
     }
     
@@ -164,7 +168,27 @@ class DetailViewController: UIViewController {
         let realm = try! Realm()
         let editMyData = realm.objects(Stock.self).filter("buy_date = '\(buy_dateLB.text!)' AND number = '\(numberLB.text!)'")
         
-        realmAction.upDate(data: editMyData[0])
+        let editData = Stock()
+        editData.name = "\(editName.text!)"
+        editData.number = "\(editNumber.text!)"
+        editData.count = "\(editCount.text!)"
+        editData.buy_date = "\(editBuy_date.text!)"
+        editData.sell_date = "\(editSell_date.text!)"
+        editData.buy_price = "\(editBuy_price.text!)"
+        editData.sell_price = "\(editSell_price.text!)"
+        editData.year = infoData[0].year
+        editData.month = infoData[0].month
+        editData.id = "\(editMyData[0].id)"
+        
+        realmAction.upDate(data: editData)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            self.editView.removeFromSuperview()
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+1.25) {
+            self.dismiss(animated: false, completion: nil)
+        }
     }
 }
 

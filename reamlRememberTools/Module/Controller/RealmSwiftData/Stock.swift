@@ -19,6 +19,11 @@ class Stock: Object {
     @objc dynamic var sell_date : String = ""
     @objc dynamic var buy_price : String = ""
     @objc dynamic var sell_price : String = ""
+    @objc dynamic var id = UUID().uuidString
     
+    // 覆寫 primaryKey() 方法來告訴 Realm 說要使用自定義的 key 值
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 //    @objc dynamic var arrayData: [String: [String:[String]]] = ["":["":[""]]]
 }

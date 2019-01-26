@@ -44,7 +44,7 @@ class TableViewViewController: UIViewController {
     @IBOutlet var addGestureBtn: UITapGestureRecognizer!
     @IBOutlet weak var sureBtn: UIButton!
     
-    var transition = false
+    var transition = false // animation alpha
     var buy_sell_date = 0
     
     var infoDataYear:Results<Stock>!
@@ -65,7 +65,7 @@ class TableViewViewController: UIViewController {
         myTableView.getCorner(cornerItem: myTableView, myCorner: 20, cornerBG: .white)
         myTableView.backgroundColor = UIColor.clear
         view.addVerticalGradientLayer(topColor: .blue, bottomColor: .white)
-        
+                
         if infoDataYear != nil{
             countSumTrade()
         }
