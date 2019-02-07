@@ -21,6 +21,7 @@
 		BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */; };
 		BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF821DDECB200E5B604 /* ViewController.swift */; };
 		BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DFA21DDF37900E5B604 /* Stock.swift */; };
+		BF3CA8C8220C0FCD009E3069 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */; };
 		BF56900E21F5C5F700FFF61C /* CheckNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */; };
 		BF56903621FAE64000FFF61C /* realmAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56903521FAE63F00FFF61C /* realmAction.swift */; };
 		BF56903C21FB4E7100FFF61C /* editNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56903821FB4E7100FFF61C /* editNumber.swift */; };
@@ -52,6 +53,7 @@
 		BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF109DF821DDECB200E5B604 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF109DFA21DDF37900E5B604 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetwork.swift; sourceTree = "<group>"; };
 		BF56903521FAE63F00FFF61C /* realmAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realmAction.swift; sourceTree = "<group>"; };
 		BF56903821FB4E7100FFF61C /* editNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = editNumber.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */,
 				BF109DF821DDECB200E5B604 /* ViewController.swift */,
 				BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */,
+				BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				BFF7355021E86F1400B4C12F /* YearTableViewController.swift in Sources */,
 				BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */,
 				BF56904321FC3A5700FFF61C /* Tools.swift in Sources */,
+				BF3CA8C8220C0FCD009E3069 /* SettingViewController.swift in Sources */,
 				BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */,
 				BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */,
 			);

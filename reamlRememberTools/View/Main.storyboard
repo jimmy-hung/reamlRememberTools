@@ -26,12 +26,24 @@
                                     <segue destination="jza-nq-NfE" kind="push" id="GUs-4z-OBU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIy-dg-WB0">
+                                <rect key="frame" x="131.5" y="473.5" width="112.5" height="53.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="setting"/>
+                                <connections>
+                                    <segue destination="DDt-p8-gxC" kind="presentation" id="pfW-SX-YRh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qIy-dg-WB0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6iE-Wx-It3"/>
+                            <constraint firstItem="qIy-dg-WB0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.5" id="HCs-04-EXW"/>
                             <constraint firstItem="QGe-ck-7lp" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.08" id="IFR-cm-xG8"/>
                             <constraint firstItem="QGe-ck-7lp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="THt-Zt-5Ci"/>
                             <constraint firstItem="QGe-ck-7lp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZIe-UM-paC"/>
+                            <constraint firstItem="qIy-dg-WB0" firstAttribute="height" secondItem="QGe-ck-7lp" secondAttribute="height" id="bT0-it-wVq"/>
+                            <constraint firstItem="qIy-dg-WB0" firstAttribute="width" secondItem="QGe-ck-7lp" secondAttribute="width" id="bzn-mS-iot"/>
                             <constraint firstItem="QGe-ck-7lp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.3" id="oJJ-ZO-Pxq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -44,6 +56,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="676" y="101.19940029985008"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="uOB-Lh-opY">
+            <objects>
+                <viewController id="DDt-p8-gxC" customClass="SettingViewController" customModule="reamlRememberTools" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kwX-d1-zIG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Rj-MG-5sR">
+                                <rect key="frame" x="217" y="97" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="選我清除"/>
+                                <connections>
+                                    <action selector="cleanUp:" destination="DDt-p8-gxC" eventType="touchUpInside" id="YRF-Zb-TJu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JT-0c-D9u">
+                                <rect key="frame" x="172" y="214" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="預設"/>
+                                <connections>
+                                    <action selector="bgAtn:" destination="DDt-p8-gxC" eventType="touchUpInside" id="4tk-Mf-ID4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVJ-mh-bTt">
+                                <rect key="frame" x="211" y="214" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="粉"/>
+                                <connections>
+                                    <action selector="bgAtn:" destination="DDt-p8-gxC" eventType="touchUpInside" id="OB2-zb-7Kd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWI-xX-Hfx">
+                                <rect key="frame" x="302" y="214" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="藍"/>
+                                <connections>
+                                    <action selector="bgAtn:" destination="DDt-p8-gxC" eventType="touchUpInside" id="lrR-a3-Lnw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SOo-zA-byy">
+                                <rect key="frame" x="249" y="214" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="紫"/>
+                                <connections>
+                                    <action selector="bgAtn:" destination="DDt-p8-gxC" eventType="touchUpInside" id="NR4-ag-iCw"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="清除所有資料" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPa-c4-Cqp">
+                                <rect key="frame" x="52" y="101" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="系統背景選擇" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3j-Q3-70C">
+                                <rect key="frame" x="52" y="219" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlR-9G-XfV">
+                                <rect key="frame" x="172" y="429" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="返回"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="DDt-p8-gxC" eventType="touchUpInside" id="5rn-KO-giT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pB2-XP-UH9"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AU4-GY-Xk8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676" y="806"/>
         </scene>
         <!--Table View View Controller-->
         <scene sceneID="3On-Cq-byY">
@@ -61,7 +152,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </stackView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="FYf-Vj-VYY" customClass="TableViewCellViewController" customModule="reamlRememberTools" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="FYf-Vj-VYY" customClass="TableViewCellViewController" customModule="reamlRememberTools" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="356" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FYf-Vj-VYY" id="0SK-eE-h1c">
@@ -256,7 +347,7 @@
                                 <rect key="frame" x="19" y="83.5" width="337.5" height="467"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="YearCell" textLabel="0Gd-aG-nhz" detailTextLabel="3ed-fJ-WCM" style="IBUITableViewCellStyleValue1" id="gTn-wk-Fwe" customClass="YearTableViewCell" customModule="reamlRememberTools" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="YearCell" textLabel="0Gd-aG-nhz" detailTextLabel="3ed-fJ-WCM" style="IBUITableViewCellStyleValue1" id="gTn-wk-Fwe" customClass="YearTableViewCell" customModule="reamlRememberTools" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="337.5" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gTn-wk-Fwe" id="m1b-jD-vKh">

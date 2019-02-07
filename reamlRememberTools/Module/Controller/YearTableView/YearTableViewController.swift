@@ -26,7 +26,18 @@ class YearTableViewController: UIViewController {
         yearTableView.delegate = self
         yearTableView.dataSource = self
         
-        yearTableView.getCorner(cornerItem: yearTableView, myCorner: 30, cornerBG: .white)
+        yearTableView.getCorner(cornerItem: yearTableView, myCorner: 30, cornerBG: .clear)
+        
+        switch current {
+        case .purple:
+            view.backgroundColor = UIColor.init(displayP3Red: 204/255, green: 204/255, blue: 255/255, alpha: 1)
+        case .pink:
+            view.backgroundColor = UIColor.init(displayP3Red: 255/255, green: 160/255, blue: 122/255, alpha: 1)
+        case .blue:
+            view.backgroundColor = UIColor.init(displayP3Red: 135/255, green: 206/255, blue: 250/255, alpha: 1)
+        case .systemDefault:
+            view.addVerticalGradientLayer(topColor: .blue, bottomColor: .white)
+        }
         
         // 分隔線的樣式
         yearTableView.separatorStyle = .none

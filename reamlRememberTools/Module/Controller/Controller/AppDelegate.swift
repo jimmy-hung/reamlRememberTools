@@ -13,6 +13,7 @@ import IQKeyboardManager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var recordBG = UserDefaults().string(forKey: "BG")
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -26,6 +27,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         IQKeyboardManager.shared().isEnabled = true
 
+        switch recordBG {
+        case "0":
+            current = .systemDefault
+        case "1":
+            current = .pink
+        case "2":
+            current = .purple
+        case "3":
+            current = .blue
+        default:
+            break
+        }
         
         return true
     }
