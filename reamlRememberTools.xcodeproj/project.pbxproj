@@ -164,6 +164,9 @@
 		BF56900A21F329EE00FFF61C /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */,
+				BFF7354721E86B1000B4C12F /* YearTableView */,
+				BF109DEA21DDEC7200E5B604 /* TableView */,
 				BF109DE521DDEC6A00E5B604 /* Tools */,
 			);
 			path = Module;
@@ -173,8 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				BF56904421FC3AAF00FFF61C /* Controller */,
-				BFF7354721E86B1000B4C12F /* YearTableView */,
-				BF109DEA21DDEC7200E5B604 /* TableView */,
 				BFF7354E21E86B9F00B4C12F /* RealmSwiftData */,
 			);
 			name = Controller;
@@ -208,7 +209,6 @@
 				BF109DD321DDEC0F00E5B604 /* AppDelegate.swift */,
 				BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */,
 				BF109DF821DDECB200E5B604 /* ViewController.swift */,
-				BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */,
 				BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */,
 			);
 			path = Controller;
@@ -449,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -504,7 +504,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -522,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2TWMWL39TU;
 				INFOPLIST_FILE = reamlRememberTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,7 +530,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.testCoreData.jimmy.reamlRememberTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -541,6 +542,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2TWMWL39TU;
 				INFOPLIST_FILE = reamlRememberTools/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -548,7 +550,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.testCoreData.jimmy.reamlRememberTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -31,6 +31,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <state key="normal" title="setting"/>
                                 <connections>
+                                    <action selector="settingAtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dRK-HI-uZJ"/>
                                     <segue destination="DDt-p8-gxC" kind="presentation" id="pfW-SX-YRh"/>
                                 </connections>
                             </button>
@@ -126,6 +127,11 @@
                                 <connections>
                                     <action selector="dismiss:" destination="DDt-p8-gxC" eventType="touchUpInside" id="5rn-KO-giT"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfV-oN-Zq5">
+                                <rect key="frame" x="156" y="334" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="查詢區間"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

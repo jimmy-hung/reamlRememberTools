@@ -32,7 +32,7 @@ class YearTableViewController: UIViewController {
         case .purple:
             view.backgroundColor = UIColor.init(displayP3Red: 204/255, green: 204/255, blue: 255/255, alpha: 1)
         case .pink:
-            view.backgroundColor = UIColor.init(displayP3Red: 255/255, green: 160/255, blue: 122/255, alpha: 1)
+            view.backgroundColor = UIColor.init(displayP3Red: 255/255, green: 192/255, blue: 203/255, alpha: 1)
         case .blue:
             view.backgroundColor = UIColor.init(displayP3Red: 135/255, green: 206/255, blue: 250/255, alpha: 1)
         case .systemDefault:
