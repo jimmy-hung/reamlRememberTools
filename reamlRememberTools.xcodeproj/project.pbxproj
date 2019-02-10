@@ -120,9 +120,9 @@
 		BF109DD221DDEC0F00E5B604 /* reamlRememberTools */ = {
 			isa = PBXGroup;
 			children = (
+				BF56900A21F329EE00FFF61C /* Module */,
 				BF56900C21F32A0300FFF61C /* View */,
 				BF56900B21F329FF00FFF61C /* Controller */,
-				BF56900A21F329EE00FFF61C /* Module */,
 				BF109DDF21DDEC1100E5B604 /* Info.plist */,
 				BF109DDA21DDEC1100E5B604 /* Assets.xcassets */,
 			);

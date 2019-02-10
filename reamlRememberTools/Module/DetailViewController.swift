@@ -168,7 +168,6 @@ class DetailViewController: UIViewController {
                     })
                 }
             }
-        
             alertController.addAction(secAction)
             alertController.addAction(firAction)
             self.present(alertController, animated: true, completion: nil)

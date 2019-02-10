@@ -19,6 +19,7 @@ enum Mode{
 var current: Mode = .systemDefault
 class SettingViewController: UIViewController {
 
+    let sercetTxt = UITextField()
     let realmAction = RealmAction()
     var recordBG = UserDefaults().string(forKey: "BG"){
         didSet{
@@ -59,6 +60,30 @@ class SettingViewController: UIViewController {
         }
     }
     
+    @IBAction func gestureBgAtn(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+        if sercetTxt.text != nil{
+            if Int(sercetTxt.text!) != nil {
+                let alertController = UIAlertController(title: "系統", message: "設定完成", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "ok", style: .default) { (alert) in
+                    UserDefaults().set(self.sercetTxt.text!, forKey: "secret")
+                }
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
+                sercetTxt.removeFromSuperview()
+            }
+        }
+    }
+    
+    @IBAction func secretAtn(_ sender: UIButton) {
+        
+        sercetTxt.frame = CGRect(x: view.frame.width/4, y: view.frame.height/3.5, width: view.frame.width/2, height: view.frame.height/20)
+        sercetTxt.backgroundColor = .white ; sercetTxt.layer.cornerRadius = 15 ; sercetTxt.keyboardType = .phonePad
+        sercetTxt.text = ""
+        view.addSubview(sercetTxt)
+    }
+    
+    
     @IBAction func bgAtn(_ sender: UIButton) {
                 switch sender.tag {
                 case 0:
@@ -87,10 +112,7 @@ class SettingViewController: UIViewController {
             self.delayDismiss()
         }
         
-        let setBction = UIAlertAction(title: "no", style: .cancel) { (alertAction) in
-            self.delayDismiss()
-        }
-        
+        let setBction = UIAlertAction(title: "no", style: .cancel)
         alertController.addAction(setAction)
         alertController.addAction(setBction)
         
