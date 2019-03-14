@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8268DCC4AEDADC9453D13AFC30EAC60B"
+               BlueprintIdentifier = "0A85E6437651C258D628A50970F7A7F1"
                BuildableName = "Pods_reamlRememberTools.framework"
                BlueprintName = "Pods-reamlRememberTools"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8268DCC4AEDADC9453D13AFC30EAC60B"
+            BlueprintIdentifier = "0A85E6437651C258D628A50970F7A7F1"
             BuildableName = "Pods_reamlRememberTools.framework"
             BlueprintName = "Pods-reamlRememberTools"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "reamlRememberTools/Module/Controller/Controller/SettingViewController.swift"
-            timestampString = "571487663.1283489"
+            filePath = "reamlRememberTools/Module/Controller/Controller/LottieAnimationViewController.swift"
+            timestampString = "573138688.1170191"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "secretAtn(_:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

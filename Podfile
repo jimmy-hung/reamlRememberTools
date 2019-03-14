@@ -8,7 +8,7 @@ target 'reamlRememberTools' do
   pod 'RealmSwift'
   pod 'IQKeyboardManager'
   pod 'TextFieldEffects'
-
+  pod 'lottie-ios'
   # Pods for reamlRememberTools
 
 end

@@ -1,5 +1,6 @@
 PODS:
   - IQKeyboardManager (6.2.0)
+  - lottie-ios (2.5.2)
   - Realm (3.13.0):
     - Realm/Headers (= 3.13.0)
   - Realm/Headers (3.13.0)
@@ -9,22 +10,25 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManager
+  - lottie-ios
   - RealmSwift
   - TextFieldEffects
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - IQKeyboardManager
+    - lottie-ios
     - Realm
     - RealmSwift
     - TextFieldEffects
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
   RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
   TextFieldEffects: 7d372f58aeaf9acd9626bbf962680aef926b085d
 
-PODFILE CHECKSUM: a0f7bde8ef1f6e7a85601f5ec51300996779c57b
+PODFILE CHECKSUM: 46f5d4b38b73c9003f1ad1a9f9d8d4fbfeec28b5
 
 COCOAPODS: 1.5.3

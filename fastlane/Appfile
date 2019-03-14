@@ -1,0 +1,4 @@
+app_identifier "com.jimmy.reamlRememberTools" # The bundle identifier of your app
+apple_id "p5p50p5p@icloud.com" # Your Apple email address
+
+# team_id "" # Developer Portal Team ID

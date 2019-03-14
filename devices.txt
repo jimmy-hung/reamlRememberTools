@@ -1,0 +1,2 @@
+Device ID	Device Name
+ea6fdfa6ddaa606fac17126915c7a6b02d9f9922	jimmy's  iPhone

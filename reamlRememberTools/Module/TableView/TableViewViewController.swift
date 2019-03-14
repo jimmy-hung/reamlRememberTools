@@ -86,6 +86,7 @@ class TableViewViewController: UIViewController {
             UIView.animate(withDuration: 0.8) {
                 self.view.alpha = 1
             }
+            myTableView.reloadData()
         }
     }
     
@@ -323,9 +324,7 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
             cell.countLB.text = "\(useInfo.count)" //"\(index[2])"
             cell.end_priceLB.text = "\(endPrice.roundTo(places: 2))" //"\(index[3])"
         }
-        
         return cell
-
     }
     
     // 有幾組 section
@@ -348,7 +347,6 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
         realmAction.deleteRealm(stock: infoDataYear[indexPath.row])
         tableView.deleteRows(at: [indexPath], with: .fade)
     }
-    
 }
 
 extension TableViewViewController: UITextFieldDelegate {

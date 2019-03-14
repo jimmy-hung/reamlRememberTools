@@ -19,6 +19,7 @@ enum Mode{
 var current: Mode = .systemDefault
 class SettingViewController: UIViewController {
 
+    let coverView = UIView()
     let sercetTxt = UITextField()
     let realmAction = RealmAction()
     var recordBG = UserDefaults().string(forKey: "BG"){
@@ -60,6 +61,7 @@ class SettingViewController: UIViewController {
         }
     }
     
+    // 新增結束編輯手勢
     @IBAction func gestureBgAtn(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
         if sercetTxt.text != nil{
@@ -70,17 +72,20 @@ class SettingViewController: UIViewController {
                 }
                 alertController.addAction(alertAction)
                 self.present(alertController, animated: true, completion: nil)
-                sercetTxt.removeFromSuperview()
+                coverView.removeFromSuperview()
             }
         }
     }
     
     @IBAction func secretAtn(_ sender: UIButton) {
         
+        coverView.frame = view.frame ; coverView.backgroundColor = .lightGray
+        view.addSubview(coverView)
+        
         sercetTxt.frame = CGRect(x: view.frame.width/4, y: view.frame.height/3.5, width: view.frame.width/2, height: view.frame.height/20)
         sercetTxt.backgroundColor = .white ; sercetTxt.layer.cornerRadius = 15 ; sercetTxt.keyboardType = .phonePad
         sercetTxt.text = ""
-        view.addSubview(sercetTxt)
+        coverView.addSubview(sercetTxt)
     }
     
     

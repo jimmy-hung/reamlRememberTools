@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UTL-PX-nKf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="O K"/>
                                 <connections>
-                                    <segue destination="jza-nq-NfE" kind="push" id="GUs-4z-OBU"/>
+                                    <segue destination="jza-nq-NfE" kind="presentation" id="6m4-RF-OLC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qIy-dg-WB0">
@@ -442,27 +442,47 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yiz-da-5EP">
+                                <rect key="frame" x="0.0" y="23.5" width="75" height="53"/>
+                                <state key="normal" title="&lt; back">
+                                    <color key="titleColor" red="0.96370576230000005" green="1" blue="0.84455919509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="jza-nq-NfE" eventType="touchUpInside" id="Mxe-oe-oWI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GB7-2S-p45">
+                                <rect key="frame" x="300" y="23.5" width="75" height="53"/>
+                                <state key="normal" title="next">
+                                    <color key="titleColor" red="0.96370576230000005" green="1" blue="0.84455919509999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAtn:" destination="jza-nq-NfE" eventType="touchUpInside" id="1Xh-eo-H1x"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="GB7-2S-p45" firstAttribute="centerY" secondItem="fyo-De-pTW" secondAttribute="centerY" multiplier="0.15" id="0zO-x7-UbG"/>
                             <constraint firstItem="tmL-aJ-duF" firstAttribute="height" secondItem="fyo-De-pTW" secondAttribute="height" multiplier="0.7" id="884-A5-Kmg"/>
                             <constraint firstItem="A31-So-mII" firstAttribute="centerY" secondItem="fyo-De-pTW" secondAttribute="centerY" multiplier="1.8" id="9jJ-em-xN6"/>
+                            <constraint firstItem="GB7-2S-p45" firstAttribute="width" secondItem="Yiz-da-5EP" secondAttribute="width" id="DFy-a8-MkR"/>
+                            <constraint firstItem="Yiz-da-5EP" firstAttribute="height" secondItem="fyo-De-pTW" secondAttribute="height" multiplier="0.08" id="FwI-Hm-Y0Q"/>
+                            <constraint firstItem="Yiz-da-5EP" firstAttribute="centerY" secondItem="fyo-De-pTW" secondAttribute="centerY" multiplier="0.15" id="HfG-aw-zeY"/>
                             <constraint firstItem="tmL-aJ-duF" firstAttribute="centerY" secondItem="fyo-De-pTW" secondAttribute="centerY" multiplier="0.95" id="Kas-Df-1T5"/>
                             <constraint firstItem="A31-So-mII" firstAttribute="width" secondItem="fyo-De-pTW" secondAttribute="width" multiplier="0.9" id="Mo1-o1-u2a"/>
+                            <constraint firstItem="GB7-2S-p45" firstAttribute="centerX" secondItem="fyo-De-pTW" secondAttribute="centerX" multiplier="1.8" id="Wku-X3-CJp"/>
+                            <constraint firstItem="Yiz-da-5EP" firstAttribute="width" secondItem="fyo-De-pTW" secondAttribute="width" multiplier="0.2" id="fhp-wo-RJp"/>
+                            <constraint firstItem="GB7-2S-p45" firstAttribute="height" secondItem="Yiz-da-5EP" secondAttribute="height" id="g5K-Tq-7q4"/>
                             <constraint firstItem="A31-So-mII" firstAttribute="height" secondItem="fyo-De-pTW" secondAttribute="height" multiplier="0.15" id="h8c-8y-sj3"/>
                             <constraint firstItem="tmL-aJ-duF" firstAttribute="width" secondItem="fyo-De-pTW" secondAttribute="width" multiplier="0.9" id="oOw-N6-XWh"/>
+                            <constraint firstItem="Yiz-da-5EP" firstAttribute="centerX" secondItem="fyo-De-pTW" secondAttribute="centerX" multiplier="0.2" id="sT9-9c-wW5"/>
                             <constraint firstItem="A31-So-mII" firstAttribute="centerX" secondItem="fyo-De-pTW" secondAttribute="centerX" id="waa-fG-mVf"/>
                             <constraint firstItem="tmL-aJ-duF" firstAttribute="centerX" secondItem="fyo-De-pTW" secondAttribute="centerX" id="yOr-ta-XSf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pIr-dt-RpN"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pN4-jC-dxp">
-                        <barButtonItem key="rightBarButtonItem" title="next" style="plain" id="Dzf-37-do2">
-                            <connections>
-                                <action selector="addAtn:" destination="jza-nq-NfE" id="hsG-OQ-HV7"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="pN4-jC-dxp"/>
                     <connections>
                         <outlet property="sumLb" destination="uc6-Xz-WH1" id="QJe-06-BXK"/>
                         <outlet property="totalTradeLb" destination="PVe-f7-bks" id="NBz-Pv-xlZ"/>
@@ -649,24 +669,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wd1-eY-uJs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3194" y="100"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="BBp-Tg-hnw">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UTL-PX-nKf" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uvf-BN-ngj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="jSp-vj-kgk"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Htq-TH-nNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-166" y="101"/>
         </scene>
     </scenes>
 </document>

@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="17" translatesAutoresizingMaskIntoConstraints="NO" id="LGe-Ig-ikX">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="yxN-fe-Qqp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="LGe-Ig-ikX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SUI-yo-gBb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LGe-Ig-ikX" secondAttribute="trailing" id="cHU-DN-1Fa"/>
-                            <constraint firstItem="LGe-Ig-ikX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dWX-Fr-Tn4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LGe-Ig-ikX" secondAttribute="bottom" id="fWo-ZH-UGa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yxN-fe-Qqp" secondAttribute="trailing" id="iw7-Mh-6hP"/>
+                            <constraint firstItem="yxN-fe-Qqp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iyk-so-Aw5"/>
+                            <constraint firstItem="yxN-fe-Qqp" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="kml-Yl-eov"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="yxN-fe-Qqp" secondAttribute="bottom" id="vBT-WN-qGF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="17" width="640" height="800"/>
+        <image name="LaunchImage" width="1024" height="1024"/>
     </resources>
 </document>

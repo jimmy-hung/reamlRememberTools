@@ -21,6 +21,8 @@
 		BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */; };
 		BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DF821DDECB200E5B604 /* ViewController.swift */; };
 		BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF109DFA21DDF37900E5B604 /* Stock.swift */; };
+		BF267BB6222962E000465E41 /* LottieAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF267BB5222962E000465E41 /* LottieAnimationViewController.swift */; };
+		BF267BB9222967EC00465E41 /* special_circle.json in Resources */ = {isa = PBXBuildFile; fileRef = BF267BB8222967EC00465E41 /* special_circle.json */; };
 		BF3CA8C8220C0FCD009E3069 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */; };
 		BF56900E21F5C5F700FFF61C /* CheckNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */; };
 		BF56903621FAE64000FFF61C /* realmAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56903521FAE63F00FFF61C /* realmAction.swift */; };
@@ -30,6 +32,8 @@
 		BF56903F21FB4E7100FFF61C /* editData.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF56903B21FB4E7100FFF61C /* editData.xib */; };
 		BF56904121FC3A1900FFF61C /* extension+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56904021FC3A1900FFF61C /* extension+Array.swift */; };
 		BF56904321FC3A5700FFF61C /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF56904221FC3A5700FFF61C /* Tools.swift */; };
+		BFBC9031223945DF00C4DE29 /* profile.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFBC9030223945DF00C4DE29 /* profile.xib */; };
+		BFBC9033223945F200C4DE29 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBC9032223945F200C4DE29 /* profile.swift */; };
 		BFD886C921E6106D00ADC441 /* addNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD886C821E6106D00ADC441 /* addNumber.swift */; };
 		BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFD886CA21E6107700ADC441 /* addNumber.xib */; };
 		BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */; };
@@ -53,6 +57,8 @@
 		BF109DF621DDEC9D00E5B604 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		BF109DF821DDECB200E5B604 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF109DFA21DDF37900E5B604 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		BF267BB5222962E000465E41 /* LottieAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieAnimationViewController.swift; sourceTree = "<group>"; };
+		BF267BB8222967EC00465E41 /* special_circle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = special_circle.json; path = reamlRememberTools/Module/Controller/Controller/special_circle.json; sourceTree = SOURCE_ROOT; };
 		BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		BF56900D21F5C5F700FFF61C /* CheckNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetwork.swift; sourceTree = "<group>"; };
 		BF56903521FAE63F00FFF61C /* realmAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = realmAction.swift; sourceTree = "<group>"; };
@@ -62,6 +68,8 @@
 		BF56903B21FB4E7100FFF61C /* editData.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = editData.xib; sourceTree = "<group>"; };
 		BF56904021FC3A1900FFF61C /* extension+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+Array.swift"; sourceTree = "<group>"; };
 		BF56904221FC3A5700FFF61C /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		BFBC9030223945DF00C4DE29 /* profile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = profile.xib; sourceTree = "<group>"; };
+		BFBC9032223945F200C4DE29 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 		BFD886C821E6106D00ADC441 /* addNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNumber.swift; sourceTree = "<group>"; };
 		BFD886CA21E6107700ADC441 /* addNumber.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addNumber.xib; sourceTree = "<group>"; };
 		BFF7354C21E86B8A00B4C12F /* YearTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearTableViewCell.swift; sourceTree = "<group>"; };
@@ -149,16 +157,24 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
-		BF109DF121DDEC8900E5B604 /* xib */ = {
+		BF109DF121DDEC8900E5B604 /* data-xib */ = {
 			isa = PBXGroup;
 			children = (
 				BF109DF221DDEC8900E5B604 /* addData.swift */,
 				BF109DF321DDEC8900E5B604 /* addData.xib */,
 				BFD886C821E6106D00ADC441 /* addNumber.swift */,
 				BFD886CA21E6107700ADC441 /* addNumber.xib */,
-				BF56903721FB4E7100FFF61C /* edit */,
 			);
-			path = xib;
+			path = "data-xib";
+			sourceTree = "<group>";
+		};
+		BF267BB7222967D500465E41 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				BF267BB8222967EC00465E41 /* special_circle.json */,
+				BF267BB5222962E000465E41 /* LottieAnimationViewController.swift */,
+			);
+			path = Lottie;
 			sourceTree = "<group>";
 		};
 		BF56900A21F329EE00FFF61C /* Module */ = {
@@ -175,6 +191,7 @@
 		BF56900B21F329FF00FFF61C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF267BB7222967D500465E41 /* Lottie */,
 				BF56904421FC3AAF00FFF61C /* Controller */,
 				BFF7354E21E86B9F00B4C12F /* RealmSwiftData */,
 			);
@@ -187,12 +204,14 @@
 			children = (
 				BF109DEF21DDEC7F00E5B604 /* Main.storyboard */,
 				BF109DDC21DDEC1100E5B604 /* LaunchScreen.storyboard */,
-				BF109DF121DDEC8900E5B604 /* xib */,
+				BFBC902F223945B200C4DE29 /* profile-xib */,
+				BF109DF121DDEC8900E5B604 /* data-xib */,
+				BF56903721FB4E7100FFF61C /* edit-xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		BF56903721FB4E7100FFF61C /* edit */ = {
+		BF56903721FB4E7100FFF61C /* edit-xib */ = {
 			isa = PBXGroup;
 			children = (
 				BF56903821FB4E7100FFF61C /* editNumber.swift */,
@@ -200,7 +219,7 @@
 				BF56903A21FB4E7100FFF61C /* editData.swift */,
 				BF56903B21FB4E7100FFF61C /* editData.xib */,
 			);
-			path = edit;
+			path = "edit-xib";
 			sourceTree = "<group>";
 		};
 		BF56904421FC3AAF00FFF61C /* Controller */ = {
@@ -212,6 +231,15 @@
 				BF3CA8C7220C0FCD009E3069 /* SettingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		BFBC902F223945B200C4DE29 /* profile-xib */ = {
+			isa = PBXGroup;
+			children = (
+				BFBC9032223945F200C4DE29 /* profile.swift */,
+				BFBC9030223945DF00C4DE29 /* profile.xib */,
+			);
+			path = "profile-xib";
 			sourceTree = "<group>";
 		};
 		BFF7354721E86B1000B4C12F /* YearTableView */ = {
@@ -297,7 +325,9 @@
 				BF109DDB21DDEC1100E5B604 /* Assets.xcassets in Resources */,
 				BF109DF521DDEC8900E5B604 /* addData.xib in Resources */,
 				BF56903D21FB4E7100FFF61C /* editNumber.xib in Resources */,
+				BF267BB9222967EC00465E41 /* special_circle.json in Resources */,
 				BF56903F21FB4E7100FFF61C /* editData.xib in Resources */,
+				BFBC9031223945DF00C4DE29 /* profile.xib in Resources */,
 				BFD886CB21E6107700ADC441 /* addNumber.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +370,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -349,6 +380,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -372,6 +404,7 @@
 				BF109DD421DDEC0F00E5B604 /* AppDelegate.swift in Sources */,
 				BF109DED21DDEC7200E5B604 /* TableViewViewController.swift in Sources */,
 				BF56903E21FB4E7100FFF61C /* editData.swift in Sources */,
+				BF267BB6222962E000465E41 /* LottieAnimationViewController.swift in Sources */,
 				BF56904121FC3A1900FFF61C /* extension+Array.swift in Sources */,
 				BF56903C21FB4E7100FFF61C /* editNumber.swift in Sources */,
 				BF109DF921DDECB200E5B604 /* ViewController.swift in Sources */,
@@ -379,6 +412,7 @@
 				BFF7354D21E86B8A00B4C12F /* YearTableViewCell.swift in Sources */,
 				BF56904321FC3A5700FFF61C /* Tools.swift in Sources */,
 				BF3CA8C8220C0FCD009E3069 /* SettingViewController.swift in Sources */,
+				BFBC9033223945F200C4DE29 /* profile.swift in Sources */,
 				BF109DF721DDEC9D00E5B604 /* DetailViewController.swift in Sources */,
 				BF109DFB21DDF37900E5B604 /* Stock.swift in Sources */,
 			);
@@ -519,7 +553,10 @@
 			baseConfigurationReference = DBB000EF5D0400BF99AB7A8A /* Pods-reamlRememberTools.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TWMWL39TU;
 				INFOPLIST_FILE = reamlRememberTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -527,8 +564,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.testCoreData.jimmy.reamlRememberTools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmy.reamlRememberTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.jimmy.reamlRememberTools";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -539,7 +577,10 @@
 			baseConfigurationReference = CF64E39629E9FF6D5D8FF8DB /* Pods-reamlRememberTools.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2TWMWL39TU;
 				INFOPLIST_FILE = reamlRememberTools/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -547,8 +588,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.testCoreData.jimmy.reamlRememberTools;
+				PRODUCT_BUNDLE_IDENTIFIER = com.jimmy.reamlRememberTools;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.jimmy.reamlRememberTools";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

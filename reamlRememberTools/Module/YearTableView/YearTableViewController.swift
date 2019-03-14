@@ -12,11 +12,11 @@ import RealmSwift
 class YearTableViewController: UIViewController {
     
     @IBOutlet weak var yearTableView: UITableView!
-    var myDataArray : [Int] = []
     @IBOutlet weak var totalTradeLb: UILabel!
     @IBOutlet weak var sumLb: UILabel!
     
     var transitionView = false
+    var myDataArray : [Int] = []
     var realmAction = RealmAction()
     
     override func viewDidLoad() {
@@ -55,9 +55,13 @@ class YearTableViewController: UIViewController {
         transitionView = true
     }
     
-    @IBAction func addAtn(_ sender: UIBarButtonItem) {
+    @IBAction func addAtn(_ sender: UIButton) {
         let nextVC = storyboard?.instantiateViewController(withIdentifier: "TableView") as! TableViewViewController
         self.present(nextVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
