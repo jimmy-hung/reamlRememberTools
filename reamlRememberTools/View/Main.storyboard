@@ -56,6 +56,7 @@
                     <navigationItem key="navigationItem" id="vTx-Sa-2qY"/>
                     <connections>
                         <outlet property="nextPageBtn" destination="QGe-ck-7lp" id="mDJ-0G-7pc"/>
+                        <outlet property="settingBtn" destination="qIy-dg-WB0" id="0yK-Oc-Zfj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

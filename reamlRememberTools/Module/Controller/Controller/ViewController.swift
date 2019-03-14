@@ -12,13 +12,16 @@ class ViewController: UIViewController {
 
     @IBOutlet var profileView: UIView!
     @IBOutlet weak var nextPageBtn: UIButton!
+    @IBOutlet weak var settingBtn: UIButton!
     @IBOutlet weak var okOrEditBtn: UIButton!
+    @IBOutlet weak var okEditBtn: UIButton!
     @IBOutlet weak var littleNameTxt: UITextField! // 小名
     @IBOutlet weak var duringDateTxt: UITextField! // 玩了多久
     @IBOutlet weak var putInMoneyTxt: UITextField! // 投入金額
     @IBOutlet weak var hadInMoneyTxt: UITextField! // 已投入金額
     @IBOutlet weak var tradeTimesTxt: UITextField! // 交易次數
     @IBOutlet weak var winOrzloseTxt: UITextField! // 總獲利金額
+    
     
     var checkSecret = UserDefaults().string(forKey: "secret") ?? "nothing"
     var checkBG = 0{
@@ -36,6 +39,7 @@ class ViewController: UIViewController {
         }
     }
     
+    var profileDataIEdit = false
     let addView = UIView()
     let inputLb = UILabel()
     let inputTxt = UITextField()
@@ -61,13 +65,26 @@ class ViewController: UIViewController {
             addView.addSubview(inputLb) ; addView.addSubview(inputTxt)
         }
         
-        if (Bundle.main.loadNibNamed("profile", owner: self, options: nil)?.first as? addData) != nil{
+        if (Bundle.main.loadNibNamed("profile", owner: self, options: nil)?.first as? profile) != nil{
             
-            profileView.frame = CGRect(x: <#T##Double#>, y: <#T##Double#>, width: <#T##Double#>, height: <#T##Double#>)
+            let viewF = view.frame
+            profileView.frame = CGRect(x: -Double(viewF.width)/1.2, y: Double(viewF.height)/6, width: Double(viewF.width)/1.2, height: Double(viewF.height)/1.5)
+            profileView.getCorner(cornerItem: profileView, myCorner: 15, cornerBG: .yellow)
+            view.addSubview(profileView)
+            
+            littleNameTxt.delegate = self
+            duringDateTxt.delegate = self
+            putInMoneyTxt.delegate = self
+            hadInMoneyTxt.delegate = self
+            tradeTimesTxt.delegate = self
+            winOrzloseTxt.delegate = self
             
         }
         
+        littleNameTxt.text = "jimmy"
+        
         nextPageBtn.getCorner(cornerItem: nextPageBtn, myCorner: 15, cornerBG: .lightGray)
+        useSwipeGesture(addView: view)
     }
     
     @IBAction func gestureAtn(_ sender: UITapGestureRecognizer) {
@@ -98,12 +115,30 @@ class ViewController: UIViewController {
     
     @objc func swipeGesture(recognizer: UISwipeGestureRecognizer){
         
+        let viewF = view.frame
+
         if recognizer.direction == .left{
-            
+            if profileView.frame.origin.x == 0 {
+                UIView.animate(withDuration: 0.5) {
+                    self.profileView.frame = CGRect(x: -Double(viewF.width)/1.2, y: Double(viewF.height)/6, width: Double(viewF.width)/1.2, height: Double(viewF.height)/1.5)
+                    self.nextPageBtn.frame.origin.x = self.view.center.x - self.nextPageBtn.frame.width/2
+                    self.settingBtn.frame.origin.x = self.view.center.x - self.settingBtn.frame.width/2
+                }
+            }
         }else{
-            
+            if profileView.frame.origin.x < 0 {
+                UIView.animate(withDuration: 0.5) {
+                    self.profileView.frame = CGRect(x: 0, y: Double(viewF.height)/6, width: Double(viewF.width)/1.2, height: Double(viewF.height)/1.5)
+                    self.nextPageBtn.frame.origin.x += 100
+                    self.settingBtn.frame.origin.x += 100
+                }
+            }
         }
         
+    }
+    
+    @objc func tapGesture(){
+        view.endEditing(true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,52 +152,111 @@ class ViewController: UIViewController {
         case .systemDefault:
             view.addVerticalGradientLayer(topColor: .white, bottomColor: .clear)
         }
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
+        profileView.addGestureRecognizer(tapGesture)
+        insertProfiletoUserdefault()
     }
     
     @IBAction func settingAtn(_ sender: UIButton) {
         checkBG += 1
     }
- 
-    @IBAction func txtCollection(_ sender: UITextField) {
-        
-        switch sender.tag {
-            case 0: littleNameTxt.text = UserDefaults().string(forKey: "littleName")
-            case 1: duringDateTxt.text = UserDefaults().string(forKey: "duringDate")
-            case 2: putInMoneyTxt.text = UserDefaults().string(forKey: "putInMoney")
-            case 3: hadInMoneyTxt.text = UserDefaults().string(forKey: "hadInMoney")
-            case 4: tradeTimesTxt.text = UserDefaults().string(forKey: "tradeTimes")
-            case 5: winOrzloseTxt.text = UserDefaults().string(forKey: "winOrzlose")
-        default:
-            return
-        }
+    
+    func insertProfiletoUserdefault(){
+        littleNameTxt.text = UserDefaults().string(forKey: "littleName")
+        duringDateTxt.text = UserDefaults().string(forKey: "duringDate")
+        putInMoneyTxt.text = UserDefaults().string(forKey: "putInMoney")
+        hadInMoneyTxt.text = UserDefaults().string(forKey: "hadInMoney")
+        tradeTimesTxt.text = UserDefaults().string(forKey: "tradeTimes")
+        winOrzloseTxt.text = UserDefaults().string(forKey: "winOrzlose")
     }
     
     @IBAction func okOrEditAtn(_ sender: UIButton) {
         
-        if okOrEditBtn.titleLabel?.text == "edit" {
-            
-            
-            okOrEditBtn.titleLabel?.text = "ok"
-            
-        }else if okOrEditBtn.titleLabel?.text == "ok" {
-            
-            
-            okOrEditBtn.titleLabel?.text = "edit"
-            
-        }
+        profileDataIEdit = true
+        okOrEditBtn.isEnabled = false
+        okEditBtn.isEnabled = true
         
     }
+    
+    @IBAction func okEditAtn(_ sender: UIButton) {
+        
+        okEditBtn.isEnabled = false
+        okOrEditBtn.isEnabled = true
+        profileDataIEdit = false
+        insertProfiletoUserdefault()
+    }
+    
 }
 
 extension ViewController: UITextFieldDelegate{
     
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if okOrEditBtn.titleLabel?.text == "edit" {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if profileDataIEdit && textField.tag == 0 || profileDataIEdit && textField.tag == 1 || profileDataIEdit && textField.tag == 2{
             return true
         }else{
             return false
         }
     }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        switch textField.tag {
+        case 0:
+            UserDefaults().set(littleNameTxt.text, forKey: "littleName")
+        case 1:
+            if !(UserDefaults().string(forKey: "duringDate")?.contains("天"))!{
+                UserDefaults().set((duringDateTxt.text ?? "幾") + " 天", forKey: "duringDate")
+            }else{
+                UserDefaults().set(duringDateTxt.text, forKey: "duringDate")
+            }
+        case 2:
+            UserDefaults().set(putInMoneyTxt.text, forKey: "putInMoney")
+        case 3:
+            UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
+        case 4:
+            UserDefaults().set(tradeTimesTxt.text, forKey: "tradeTimes")
+        case 5:
+            UserDefaults().set(winOrzloseTxt.text, forKey: "winOrzlose")
+        default:
+            break
+        }
+        insertProfiletoUserdefault()
+        return true
+    }
+    
 }
+
+/*
+ insertProfiletoUserdefault()
+ switch sender.tag {
+ case 0: UserDefaults().set(littleNameTxt.text, forKey: "littleName")
+ case 1: UserDefaults().set(duringDateTxt.text, forKey: "duringDate")
+ case 2: UserDefaults().set(putInMoneyTxt.text, forKey: "putInMoney")
+ case 3: UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
+ case 4: UserDefaults().set(tradeTimesTxt.text, forKey: "tradeTimes")
+ case 5: UserDefaults().set(winOrzloseTxt.text, forKey: "winOrzlose")
+ default:
+ return
+ 
+ 
+ switch textField.tag {
+ case 0:
+ littleNameTxt.text = UserDefaults().string(forKey: "littleName")
+ case 1:
+ duringDateTxt.text = UserDefaults().string(forKey: "duringDate")
+ case 2:
+ putInMoneyTxt.text = UserDefaults().string(forKey: "putInMoney")
+ case 3:
+ hadInMoneyTxt.text = UserDefaults().string(forKey: "hadInMoney")
+ case 4:
+ tradeTimesTxt.text = UserDefaults().string(forKey: "tradeTimes")
+ case 5:
+ winOrzloseTxt.text = UserDefaults().string(forKey: "winOrzlose")
+ default:
+ break
+ }
+
+ }
+ */
+
+
