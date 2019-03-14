@@ -43,6 +43,8 @@ class YearTableViewController: UIViewController {
         yearTableView.separatorStyle = .none
         
         countSumTrade()
+        
+        useSwipeGesture(addView: view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,6 +109,23 @@ class YearTableViewController: UIViewController {
             }
         }
         sumLb.text = String(Int(sum.roundTo(places: 2)))
+    }
+    
+    // MARK: SwipeGesturer
+    func useSwipeGesture(addView: UIView){
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture(recognizer:)))
+        
+        rightGesture.direction = .right
+        addView.addGestureRecognizer(rightGesture)
+    }
+    
+    @objc func swipeGesture(recognizer: UISwipeGestureRecognizer){
+        UIView.animate(withDuration: 0.4) {
+            self.view.alpha = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.4) {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

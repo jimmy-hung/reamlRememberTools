@@ -28,43 +28,43 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="589"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Vbt-M9-GpX" userLabel="profileData">
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Vbt-M9-GpX" userLabel="profileData">
                     <rect key="frame" x="60" y="147.5" width="360" height="353"/>
                     <subviews>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="小名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Yr-pb-fYE" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="0.0" y="0.0" width="360" height="38"/>
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="46"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="縱橫股海" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="of3-YU-uNs" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="0.0" y="63" width="360" height="38"/>
+                            <rect key="frame" x="0.0" y="61" width="360" height="46.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="投入金額" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BQi-tK-zyR" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="0.0" y="126" width="360" height="38"/>
+                            <rect key="frame" x="0.0" y="122.5" width="360" height="46.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="已投入金額" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-b7-Fjh" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="0.0" y="189" width="360" height="38"/>
+                            <rect key="frame" x="0.0" y="184" width="360" height="46.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="交易次數" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oLy-vg-OSk" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="0.0" y="252" width="360" height="38"/>
+                            <rect key="frame" x="0.0" y="245.5" width="360" height="46.5"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <textField opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="總獲利金額" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NiZ-yx-C9q" customClass="KaedeTextField" customModule="TextFieldEffects">
-                            <rect key="frame" x="0.0" y="315" width="360" height="38"/>
+                            <rect key="frame" x="0.0" y="307" width="360" height="46"/>
                             <nil key="textColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>

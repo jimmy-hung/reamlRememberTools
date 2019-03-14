@@ -204,7 +204,7 @@ extension ViewController: UITextFieldDelegate{
         case 0:
             UserDefaults().set(littleNameTxt.text, forKey: "littleName")
         case 1:
-            if !(UserDefaults().string(forKey: "duringDate")?.contains("天"))!{
+            if !(UserDefaults().string(forKey: "duringDate")?.contains("天") ?? true){
                 UserDefaults().set((duringDateTxt.text ?? "幾") + " 天", forKey: "duringDate")
             }else{
                 UserDefaults().set(duringDateTxt.text, forKey: "duringDate")

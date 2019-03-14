@@ -78,6 +78,8 @@ class TableViewViewController: UIViewController {
         if infoDataYear != nil{
             countSumTrade()
         }
+        
+        useSwipeGesture(addView: view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -284,6 +286,23 @@ class TableViewViewController: UIViewController {
             if Float(sender.text!) == nil{addAlert(titleContent: "錯誤", messageContent: "請確認資料內容", isWhitch: "B") ; sender.text = "" }
         default:
             print("")
+        }
+    }
+    
+    // MARK: SwipeGesturer
+    func useSwipeGesture(addView: UIView){
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture(recognizer:)))
+        
+        rightGesture.direction = .right
+        addView.addGestureRecognizer(rightGesture)
+    }
+    
+    @objc func swipeGesture(recognizer: UISwipeGestureRecognizer){
+        UIView.animate(withDuration: 0.4) {
+            self.view.alpha = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.4) {
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }
