@@ -53,6 +53,7 @@ class DetailViewController: UIViewController {
             view.addVerticalGradientLayer(topColor: .white, bottomColor: .clear)
         }
         showMyData()
+        useSwipeGesture(addView: view)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,10 +94,10 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func backAtn(_ sender: UIButton) {
-        UIView.animate(withDuration: 0.8) {
+        UIView.animate(withDuration: 0.5) {
             self.view.alpha = 0
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.dismiss(animated: true, completion: nil)
         }
     }
@@ -225,6 +226,23 @@ class DetailViewController: UIViewController {
         }
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
             self.editNumberView.removeFromSuperview()
+        }
+    }
+    
+    // MARK: SwipeGesturer
+    func useSwipeGesture(addView: UIView){
+        let rightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeGesture(recognizer:)))
+        
+        rightGesture.direction = .right
+        addView.addGestureRecognizer(rightGesture)
+    }
+    
+    @objc func swipeGesture(recognizer: UISwipeGestureRecognizer){
+        UIView.animate(withDuration: 0.4) {
+            self.view.alpha = 0
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.4) {
+            self.dismiss(animated: true, completion: nil)
         }
     }
 }

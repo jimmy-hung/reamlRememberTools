@@ -624,9 +624,8 @@
                                     <action selector="backAtn:" destination="LP7-4Z-2bj" eventType="touchUpInside" id="pbT-XW-r16"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-Bc-HZA">
-                                <rect key="frame" x="316" y="51" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-Bc-HZA">
+                                <rect key="frame" x="281.5" y="40" width="75" height="53.5"/>
                                 <state key="normal" title="edit"/>
                                 <connections>
                                     <action selector="editAtn:" destination="LP7-4Z-2bj" eventType="touchUpInside" id="y5g-wS-yF8"/>
@@ -635,6 +634,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="lVp-Bc-HZA" firstAttribute="height" secondItem="QLA-cH-PKj" secondAttribute="height" id="1hi-2H-wAT"/>
                             <constraint firstItem="zgb-ee-0rg" firstAttribute="centerY" secondItem="pj3-ML-ERd" secondAttribute="centerY" multiplier="1.85" id="5BB-fC-a4d"/>
                             <constraint firstItem="zgb-ee-0rg" firstAttribute="height" secondItem="pj3-ML-ERd" secondAttribute="height" multiplier="0.08" id="7wK-Ij-7hO"/>
                             <constraint firstItem="JLA-0Z-BkJ" firstAttribute="height" secondItem="pj3-ML-ERd" secondAttribute="height" multiplier="0.8" id="8Zw-X2-eTy"/>
@@ -646,6 +646,9 @@
                             <constraint firstItem="AAi-DW-PBT" firstAttribute="centerY" secondItem="pj3-ML-ERd" secondAttribute="centerY" id="cvv-hO-T3g"/>
                             <constraint firstItem="AAi-DW-PBT" firstAttribute="width" secondItem="JLA-0Z-BkJ" secondAttribute="width" id="e6U-JR-mmh"/>
                             <constraint firstItem="JLA-0Z-BkJ" firstAttribute="centerY" secondItem="pj3-ML-ERd" secondAttribute="centerY" id="gHc-8v-qkY"/>
+                            <constraint firstItem="lVp-Bc-HZA" firstAttribute="centerY" secondItem="pj3-ML-ERd" secondAttribute="centerY" multiplier="0.2" id="geH-kU-kgO"/>
+                            <constraint firstItem="lVp-Bc-HZA" firstAttribute="centerX" secondItem="pj3-ML-ERd" secondAttribute="centerX" multiplier="1.7" id="hDI-OW-eQ3"/>
+                            <constraint firstItem="lVp-Bc-HZA" firstAttribute="width" secondItem="QLA-cH-PKj" secondAttribute="width" id="jXF-pG-bN5"/>
                             <constraint firstItem="QLA-cH-PKj" firstAttribute="width" secondItem="pj3-ML-ERd" secondAttribute="width" multiplier="0.2" id="jpk-tk-02k"/>
                             <constraint firstItem="zgb-ee-0rg" firstAttribute="centerX" secondItem="pj3-ML-ERd" secondAttribute="centerX" id="kY2-1H-B17"/>
                             <constraint firstItem="JLA-0Z-BkJ" firstAttribute="centerX" secondItem="pj3-ML-ERd" secondAttribute="centerX" multiplier="0.75" id="pIQ-wb-8QI"/>

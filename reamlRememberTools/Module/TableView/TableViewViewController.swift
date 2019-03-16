@@ -85,7 +85,7 @@ class TableViewViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if transition == true{
             view.alpha = 0
-            UIView.animate(withDuration: 0.8) {
+            UIView.animate(withDuration: 0.5) {
                 self.view.alpha = 1
             }
             myTableView.reloadData()

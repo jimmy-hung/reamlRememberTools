@@ -39,4 +39,3 @@ extension Date {
         return components.day ?? 0
     }
 }
-

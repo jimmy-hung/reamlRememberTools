@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class ViewController: UIViewController {
 
     @IBOutlet var profileView: UIView!
@@ -48,7 +48,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
         lottieAnimationVC.startLottieAnimation(view: self.view)
         
         if checkSecret != "nothing" {
@@ -78,10 +77,7 @@ class ViewController: UIViewController {
             hadInMoneyTxt.delegate = self
             tradeTimesTxt.delegate = self
             winOrzloseTxt.delegate = self
-            
         }
-        
-        littleNameTxt.text = "jimmy"
         
         nextPageBtn.getCorner(cornerItem: nextPageBtn, myCorner: 15, cornerBG: .lightGray)
         useSwipeGesture(addView: view)
@@ -123,6 +119,7 @@ class ViewController: UIViewController {
                     self.profileView.frame = CGRect(x: -Double(viewF.width)/1.2, y: Double(viewF.height)/6, width: Double(viewF.width)/1.2, height: Double(viewF.height)/1.5)
                     self.nextPageBtn.frame.origin.x = self.view.center.x - self.nextPageBtn.frame.width/2
                     self.settingBtn.frame.origin.x = self.view.center.x - self.settingBtn.frame.width/2
+                    
                 }
             }
         }else{
@@ -131,6 +128,7 @@ class ViewController: UIViewController {
                     self.profileView.frame = CGRect(x: 0, y: Double(viewF.height)/6, width: Double(viewF.width)/1.2, height: Double(viewF.height)/1.5)
                     self.nextPageBtn.frame.origin.x += 100
                     self.settingBtn.frame.origin.x += 100
+                    self.putInMoneyTxt.text = "0" // 投入金額歸0
                 }
             }
         }
@@ -155,14 +153,31 @@ class ViewController: UIViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
         profileView.addGestureRecognizer(tapGesture)
-        insertProfiletoUserdefault()
+        getUserdefaultToProfile()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        countSumTrade()              // profile 計算基礎資料
+        toCountHowLongDurningStock() // profile 計算總共過了多少天
     }
     
     @IBAction func settingAtn(_ sender: UIButton) {
         checkBG += 1
     }
     
-    func insertProfiletoUserdefault(){
+    // 將個人基本資料儲存
+    func insertProfileToUserdefault(){
+        UserDefaults().set(littleNameTxt.text, forKey: "littleName")
+        UserDefaults().set(duringDateTxt.text, forKey: "duringDate")
+        UserDefaults().set(putInMoneyTxt.text, forKey: "putInMoney")
+        UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
+        UserDefaults().set(tradeTimesTxt.text, forKey: "tradeTimes")
+        UserDefaults().set(winOrzloseTxt.text, forKey: "winOrzlose")
+    }
+    
+    // 將顧人基本資料取出
+    func getUserdefaultToProfile(){
         littleNameTxt.text = UserDefaults().string(forKey: "littleName")
         duringDateTxt.text = UserDefaults().string(forKey: "duringDate")
         putInMoneyTxt.text = UserDefaults().string(forKey: "putInMoney")
@@ -184,9 +199,101 @@ class ViewController: UIViewController {
         okEditBtn.isEnabled = false
         okOrEditBtn.isEnabled = true
         profileDataIEdit = false
-        insertProfiletoUserdefault()
+        
+        // 儲存設定名稱
+        UserDefaults().set(littleNameTxt.text, forKey: "littleName")
+        
+        // 計算已投入金額
+        if Int(hadInMoneyTxt.text!) != nil && Int(putInMoneyTxt.text!) != nil{
+            let a = Int(hadInMoneyTxt.text!)! ; let b = Int(putInMoneyTxt.text!)! ; let sum = a + b
+            hadInMoneyTxt.text = "\(sum)" ; UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
+        }else if Int(hadInMoneyTxt.text!) == nil{
+            let a = Int(putInMoneyTxt.text!)!
+            hadInMoneyTxt.text = "\(a)" ; UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
+        }else{
+            return
+        }
+        // 將目前輸入的值儲存
+        insertProfileToUserdefault()
     }
     
+    // 計算第一次交易股票後開始總共過了多久
+    func toCountHowLongDurningStock(){
+        let realm = try! Realm()
+        let stock = realm.objects(Stock.self)
+        var dateArray : [Int] = []
+
+        // 接出realm裡 年 的資料
+        if stock.count != 0 {
+            for i in 0 ... (stock.count - 1){
+                dateArray.append(stock[i].year)
+            }
+            dateArray = dateArray.removingDuplicates()
+            // 將陣列從小排到大 ( reverse() 大 - 小 )
+            dateArray.sort()
+        }
+        
+        // 找出所有符合最早年份的資料
+        let aboutEarlyYear = realm.objects(Stock.self).filter("year = \(dateArray[0])")
+        dateArray = [] // 重置說取月份
+        if aboutEarlyYear.count != 0 {
+            for i in 0 ... (aboutEarlyYear.count - 1){
+                dateArray.append(aboutEarlyYear[i].month)
+            }
+            dateArray = dateArray.removingDuplicates()
+            // 將陣列從小排到大 ( reverse() 大 - 小 )
+            dateArray.sort()
+        }
+        
+        // 找出所有符合最早月份的資料
+        let aboutEarlyMonth = realm.objects(Stock.self).filter("month = \(dateArray[0])")
+        dateArray = [] // 重置說取日
+        if aboutEarlyMonth.count != 0 {
+            for i in 0 ... (aboutEarlyMonth.count - 1){
+                dateArray.append(aboutEarlyMonth[i].month)
+            }
+            dateArray = dateArray.removingDuplicates()
+            // 將陣列從小排到大 ( reverse() 大 - 小 )
+            dateArray.sort()
+        }
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY.MM.dd"
+        
+        let now:Date = Date()
+        
+        let nowTransform = formatter.date(from: formatter.string(from: now))!        // 現在日期
+        let firstBuy = formatter.date(from: aboutEarlyMonth[0].buy_date)!            // 第一次購買日期
+        
+        let days = firstBuy.daysBetweenDate(toDate: nowTransform)                    // 總計多少天過去
+
+        duringDateTxt.text = "\(days)" + "天"
+    }
+    
+    // 計算總交易次數 = 總共幾筆資料
+    func countSumTrade(){
+        let realm = try! Realm()
+        let stock = realm.objects(Stock.self)
+        tradeTimesTxt.text = String(stock.count)
+        
+        var sum : Double = 0
+        
+        if stock.count != 0 {
+            for i in  0 ... (stock.count - 1) {
+                let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
+                sum = sum + endPrice
+            }
+            sum = sum * 1000
+            
+            // 有獲利顯示紅色，虧損則顯示綠色
+            if sum > 0{
+                winOrzloseTxt.textColor = .red
+            }else if sum < 0{
+                winOrzloseTxt.textColor = .green
+            }
+        }
+        winOrzloseTxt.text = String(Int(sum.roundTo(places: 2)))
+    }
 }
 
 extension ViewController: UITextFieldDelegate{
@@ -199,30 +306,24 @@ extension ViewController: UITextFieldDelegate{
         }
     }
     
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+    // 點擊編輯時，自動清空
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField.tag {
         case 0:
-            UserDefaults().set(littleNameTxt.text, forKey: "littleName")
-        case 1:
-            if !(UserDefaults().string(forKey: "duringDate")?.contains("天") ?? true){
-                UserDefaults().set((duringDateTxt.text ?? "幾") + " 天", forKey: "duringDate")
-            }else{
-                UserDefaults().set(duringDateTxt.text, forKey: "duringDate")
-            }
+            littleNameTxt.text = ""
         case 2:
-            UserDefaults().set(putInMoneyTxt.text, forKey: "putInMoney")
-        case 3:
-            UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
-        case 4:
-            UserDefaults().set(tradeTimesTxt.text, forKey: "tradeTimes")
-        case 5:
-            UserDefaults().set(winOrzloseTxt.text, forKey: "winOrzlose")
+            putInMoneyTxt.text = ""
         default:
-            break
+            return
         }
-        insertProfiletoUserdefault()
-        return true
     }
+    
+    // 結束編輯時設定
+//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+//
+//        insertProfiletoUserdefault()
+//        return true
+//    }
     
 }
 
@@ -237,7 +338,6 @@ extension ViewController: UITextFieldDelegate{
  case 5: UserDefaults().set(winOrzloseTxt.text, forKey: "winOrzlose")
  default:
  return
- 
  
  switch textField.tag {
  case 0:
@@ -257,6 +357,21 @@ extension ViewController: UITextFieldDelegate{
  }
 
  }
+ 
+ UserDefaults().set(littleNameTxt.text, forKey: "littleName")
+ UserDefaults().set(duringDateTxt.text, forKey: "duringDate")
+ UserDefaults().set(putInMoneyTxt.text, forKey: "putInMoney")
+ UserDefaults().set(hadInMoneyTxt.text, forKey: "hadInMoney")
+ UserDefaults().set(tradeTimesTxt.text, forKey: "tradeTimes")
+ UserDefaults().set(winOrzloseTxt.text, forKey: "winOrzlose")
+ 
+ littleNameTxt.text = UserDefaults().string(forKey: "littleName")
+ duringDateTxt.text = UserDefaults().string(forKey: "duringDate")
+ putInMoneyTxt.text = UserDefaults().string(forKey: "putInMoney")
+ hadInMoneyTxt.text = UserDefaults().string(forKey: "hadInMoney")
+ tradeTimesTxt.text = UserDefaults().string(forKey: "tradeTimes")
+ winOrzloseTxt.text = UserDefaults().string(forKey: "winOrzlose")
+ 
  */
 
 
