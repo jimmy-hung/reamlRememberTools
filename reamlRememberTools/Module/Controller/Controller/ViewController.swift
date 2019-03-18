@@ -158,6 +158,8 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        putInMoneyTxt.keyboardType = .numberPad
         countSumTrade()              // profile 計算基礎資料
         toCountHowLongDurningStock() // profile 計算總共過了多少天
     }
@@ -233,41 +235,45 @@ class ViewController: UIViewController {
             dateArray.sort()
         }
         
-        // 找出所有符合最早年份的資料
-        let aboutEarlyYear = realm.objects(Stock.self).filter("year = \(dateArray[0])")
-        dateArray = [] // 重置說取月份
-        if aboutEarlyYear.count != 0 {
-            for i in 0 ... (aboutEarlyYear.count - 1){
-                dateArray.append(aboutEarlyYear[i].month)
+        if stock.count != 0 {
+            
+            // 找出所有符合最早年份的資料
+            let aboutEarlyYear = realm.objects(Stock.self).filter("year = \(dateArray[0])")
+            dateArray = [] // 重置說取月份
+            if aboutEarlyYear.count != 0 {
+                for i in 0 ... (aboutEarlyYear.count - 1){
+                    dateArray.append(aboutEarlyYear[i].month)
+                }
+                dateArray = dateArray.removingDuplicates()
+                // 將陣列從小排到大 ( reverse() 大 - 小 )
+                dateArray.sort()
             }
-            dateArray = dateArray.removingDuplicates()
-            // 將陣列從小排到大 ( reverse() 大 - 小 )
-            dateArray.sort()
-        }
-        
-        // 找出所有符合最早月份的資料
-        let aboutEarlyMonth = realm.objects(Stock.self).filter("month = \(dateArray[0])")
-        dateArray = [] // 重置說取日
-        if aboutEarlyMonth.count != 0 {
-            for i in 0 ... (aboutEarlyMonth.count - 1){
-                dateArray.append(aboutEarlyMonth[i].month)
+            
+            // 找出所有符合最早月份的資料
+            let aboutEarlyMonth = realm.objects(Stock.self).filter("month = \(dateArray[0])")
+            dateArray = [] // 重置說取日
+            if aboutEarlyMonth.count != 0 {
+                for i in 0 ... (aboutEarlyMonth.count - 1){
+                    dateArray.append(aboutEarlyMonth[i].month)
+                }
+                dateArray = dateArray.removingDuplicates()
+                // 將陣列從小排到大 ( reverse() 大 - 小 )
+                dateArray.sort()
             }
-            dateArray = dateArray.removingDuplicates()
-            // 將陣列從小排到大 ( reverse() 大 - 小 )
-            dateArray.sort()
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY.MM.dd"
+            
+            let now:Date = Date()
+            
+            let nowTransform = formatter.date(from: formatter.string(from: now))!        // 現在日期
+            let firstBuy = formatter.date(from: aboutEarlyMonth[0].buy_date)!            // 第一次購買日期
+            
+            let days = firstBuy.daysBetweenDate(toDate: nowTransform)                    // 總計多少天過去
+            
+            duringDateTxt.text = "\(days)" + "天"
+            
         }
-        
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY.MM.dd"
-        
-        let now:Date = Date()
-        
-        let nowTransform = formatter.date(from: formatter.string(from: now))!        // 現在日期
-        let firstBuy = formatter.date(from: aboutEarlyMonth[0].buy_date)!            // 第一次購買日期
-        
-        let days = firstBuy.daysBetweenDate(toDate: nowTransform)                    // 總計多少天過去
-
-        duringDateTxt.text = "\(days)" + "天"
     }
     
     // 計算總交易次數 = 總共幾筆資料
@@ -280,8 +286,10 @@ class ViewController: UIViewController {
         
         if stock.count != 0 {
             for i in  0 ... (stock.count - 1) {
-                let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
-                sum = sum + endPrice
+                if stock[i].sell_price != "" && stock[i].buy_price != "" {
+                    let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
+                    sum = sum + endPrice
+                }
             }
             sum = sum * 1000
             
@@ -299,7 +307,7 @@ class ViewController: UIViewController {
 extension ViewController: UITextFieldDelegate{
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        if profileDataIEdit && textField.tag == 0 || profileDataIEdit && textField.tag == 1 || profileDataIEdit && textField.tag == 2{
+        if profileDataIEdit && textField.tag == 0 || profileDataIEdit && textField.tag == 2{
             return true
         }else{
             return false

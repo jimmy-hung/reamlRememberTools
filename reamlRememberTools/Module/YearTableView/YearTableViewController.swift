@@ -91,14 +91,24 @@ class YearTableViewController: UIViewController {
     func countSumTrade(){
         let realm = try! Realm()
         let stock = realm.objects(Stock.self)
-        totalTradeLb.text = String(stock.count)
+        var countTradeTimes = 0
+        
+        for s in 0 ... stock.count - 1 {
+            if stock[s].sell_price != ""{
+                countTradeTimes += 1
+            }
+        }
+        
+        totalTradeLb.text = "\(countTradeTimes)"
         
         var sum : Double = 0
         
         if stock.count != 0 {
             for i in  0 ... (stock.count - 1) {
-                let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
-                sum = sum + endPrice
+                if stock[i].sell_price != "" && stock[i].buy_price != "" {
+                    let endPrice = Double(stock[i].count)! * ((Double(stock[i].sell_price)!) - (Double(stock[i].buy_price)!))
+                    sum = sum + endPrice
+                }
             }
             sum = sum * 1000
             
@@ -164,6 +174,11 @@ extension YearTableViewController : UITableViewDataSource, UITableViewDelegate{
             yearSum = 0
         }
         return yearSum
+    }
+    
+    // cell 的高度調整
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

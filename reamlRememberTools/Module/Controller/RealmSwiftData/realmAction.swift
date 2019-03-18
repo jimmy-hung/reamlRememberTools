@@ -42,6 +42,7 @@ class RealmAction : NSObject{
         try! realm.write {
             realm.deleteAll()
         }
+        UserDefaults().set("", forKey: "duringDate") // 清空累計天數
     }
     
 }

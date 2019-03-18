@@ -61,13 +61,17 @@ class DetailViewController: UIViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYY.MM.dd"
         
-        let a = formatter.date(from: infoData[0].sell_date)!  // 賣出日期
-        let b = formatter.date(from: infoData[0].buy_date)!  // 買入日期
         
-        let days = b.daysBetweenDate(toDate: a)
-        
-        resultLB.adjustsFontSizeToFitWidth = true
-        resultLB.text = "經過 \(String(describing: days)) 天，總共獲取 \((Int(spread() * 1000))) 金額"
+        if sell_dateLB.text != "" && sell_priceLB.text != "" {
+            let a = formatter.date(from: infoData[0].sell_date)!  // 賣出日期
+            let b = formatter.date(from: infoData[0].buy_date)!  // 買入日期
+            
+            let days = b.daysBetweenDate(toDate: a)
+            
+            resultLB.adjustsFontSizeToFitWidth = true
+            
+            resultLB.text = "經過 \(String(describing: days)) 天，總共獲取 \((Int(spread() * 1000))) 金額"
+        }
     }
         
     func showMyData(){
@@ -83,12 +87,16 @@ class DetailViewController: UIViewController {
     }
     
     func spread() -> Double{
-        
+
         let a = Double(infoData[0].sell_price)  // 賣出價格
         let b = Double(infoData[0].buy_price)   // 買入價格
         let c = Double(infoData[0].count)       // 張數
         
-        let spread = (( a! - b! ) * c!).roundTo(places: 2)
+        var spread = 0.0
+        
+        if a != nil {
+            spread = (( a! - b! ) * c!).roundTo(places: 2)
+        }
         
         return spread
     }

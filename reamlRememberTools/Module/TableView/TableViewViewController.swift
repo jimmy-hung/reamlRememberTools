@@ -53,7 +53,7 @@ class TableViewViewController: UIViewController {
         super.viewDidLoad()
         
         // 顯示 realm dataBase 路徑位置
-        print(Realm.Configuration.defaultConfiguration.fileURL)
+        print(Realm.Configuration.defaultConfiguration.fileURL ?? "database is not found")
 
         // 設置委任對象
         myTableView.delegate = self
@@ -108,9 +108,13 @@ class TableViewViewController: UIViewController {
     }
     
     @IBAction func addAtn(_ sender: UIButton) {
+        insertAddXib()
+    }
+    
+    func insertAddXib(){
         // insert xib
-        if (Bundle.main.loadNibNamed("addData", owner: self, options: nil)?.first as? addData) != nil
-        {
+        if (Bundle.main.loadNibNamed("addData", owner: self, options: nil)?.first as? addData) != nil{
+            
             addDataView.frame.size.width = view.frame.size.width * 0.8
             addDataView.frame.size.height = view.frame.size.height * 0.6
             addDataView.frame.origin.x = self.view.frame.size.width * 0.2 / 2
@@ -131,7 +135,7 @@ class TableViewViewController: UIViewController {
         for i in 0...collectLB.count-1{
             collectLB[i].adjustsFontSizeToFitWidth = true
         }
-
+        
         sureBtn.alpha = 0
         clearView = true
     }
@@ -150,6 +154,7 @@ class TableViewViewController: UIViewController {
         }
         if sender.tag == 0 { buy_sell_date = 0 }
         else if sender.tag == 1 { buy_sell_date = 1 }
+        view.endEditing(true) // 點擊時收起鍵盤
     }
     
     @IBAction func dateDoneAtn(_ sender: UIButton) {
@@ -203,17 +208,25 @@ class TableViewViewController: UIViewController {
     
     // 計算總交易次數 = 總共幾筆資料
     func countSumTrade(){
-//        let realm = try! Realm()
-//        let stock = realm.objects(Stock.self)
+        var countTradeTimes = 0
         tradMYearLb.text = String(infoDataYear![0].year)
-        tradTimesLB.text = String(infoDataYear!.count)
+        
+        for s in 0 ... (infoDataYear!.count - 1){
+            if infoDataYear![s].sell_price != ""{
+                countTradeTimes += 1
+            }
+        }
+        
+        tradTimesLB.text = "\(countTradeTimes)"
         
         var sum : Double = 0
         
         if infoDataYear!.count != 0 {
             for i in  0 ... (infoDataYear!.count - 1) {
-                let endPrice = Double(infoDataYear![i].count)! * ((Double(infoDataYear![i].sell_price)!) - (Double(infoDataYear![i].buy_price)!))
-                sum = sum + endPrice
+                if infoDataYear![i].sell_price != "" && infoDataYear![i].buy_price != "" {
+                    let endPrice = Double(infoDataYear![i].count)! * ((Double(infoDataYear![i].sell_price)!) - (Double(infoDataYear![i].buy_price)!))
+                    sum = sum + endPrice
+                }
             }
             sum = sum * 1000
             
@@ -238,8 +251,9 @@ class TableViewViewController: UIViewController {
     
     // 若欄位都有填寫tap過後出現按鈕選項
     @IBAction func addGestureCheckData(_ sender: UITapGestureRecognizer) {
-        if addNumText.text != "" && addNameText.text != "" && addCountText.text != "" && addBDateText.text != "" && addSDateText.text != "" && addBPriceText.text != "" && addSPricrText.text != "" {
+        if addNumText.text != "" && addNameText.text != "" && addCountText.text != "" && addBDateText.text != ""  && addBPriceText.text != "" {
             sureBtn.alpha = 1
+            // && addSPricrText.text != "" && addSDateText.text != ""
         }
     }
     
@@ -332,16 +346,22 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
         // 顯示的內容
         if cell.textLabel != nil {
 
+            var endPrice = 0.0
+            var sell_price: Double
             let count = Double(useInfo.count)!
-            let sell_price = Double(useInfo.sell_price)!
             let buy_price = Double(useInfo.buy_price)!
+            
+            
+            if useInfo.sell_price != ""{
+                sell_price = Double(useInfo.sell_price)!
+                endPrice = count * (sell_price - buy_price)
+            }
+            
 
-            let endPrice = count * (sell_price - buy_price)
-
-            cell.nameLB.text = "\(useInfo.name)" //"\(index[0])"
-            cell.numberLB.text = "\(useInfo.number)" //"\(index[1])"
-            cell.countLB.text = "\(useInfo.count)" //"\(index[2])"
-            cell.end_priceLB.text = "\(endPrice.roundTo(places: 2))" //"\(index[3])"
+            cell.nameLB.text = "\(useInfo.name)"
+            cell.numberLB.text = "\(useInfo.number)"
+            cell.countLB.text = "\(useInfo.count)"
+            cell.end_priceLB.text = "\(endPrice.roundTo(places: 2))"
         }
         return cell
     }
@@ -349,6 +369,11 @@ extension TableViewViewController: UITableViewDelegate, UITableViewDataSource{
     // 有幾組 section
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    // cell 的高度調整
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
 
     // 每個 section 的標題
@@ -386,6 +411,12 @@ extension TableViewViewController: UITextFieldDelegate {
             return false
         case 5:
             return false
+        case 6:
+            if addBDateText.text != ""{ return true }
+            else{ return false }
+        case 7:
+            if addSDateText.text != ""{ return true }
+            else{ return false }
         default:
             return true
         }
