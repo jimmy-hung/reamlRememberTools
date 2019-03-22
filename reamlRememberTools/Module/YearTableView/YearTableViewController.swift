@@ -92,10 +92,11 @@ class YearTableViewController: UIViewController {
         let realm = try! Realm()
         let stock = realm.objects(Stock.self)
         var countTradeTimes = 0
-        
-        for s in 0 ... stock.count - 1 {
-            if stock[s].sell_price != ""{
-                countTradeTimes += 1
+        if stock.count != 0 {
+            for s in 0 ... stock.count - 1 {
+                if stock[s].sell_price != ""{
+                    countTradeTimes += 1
+                }
             }
         }
         
